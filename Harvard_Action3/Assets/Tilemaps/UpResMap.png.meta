@@ -449,6 +449,57 @@ TextureImporter:
   - first:
       213: 2786949229676289070
     second: UpResMap_148
+  - first:
+      213: 3714848428085450308
+    second: UpResMap_149
+  - first:
+      213: 5953517461255109681
+    second: UpResMap_150
+  - first:
+      213: 3445766804259611712
+    second: UpResMap_151
+  - first:
+      213: -423055400275894180
+    second: UpResMap_152
+  - first:
+      213: -3554016775229167980
+    second: UpResMap_153
+  - first:
+      213: 648402323954372090
+    second: UpResMap_154
+  - first:
+      213: -6458149005274696273
+    second: UpResMap_155
+  - first:
+      213: 339945506980341484
+    second: UpResMap_156
+  - first:
+      213: 8267739754310376931
+    second: UpResMap_157
+  - first:
+      213: -2545354038685986598
+    second: UpResMap_158
+  - first:
+      213: 3090819071048139538
+    second: UpResMap_159
+  - first:
+      213: -7372052738609394951
+    second: UpResMap_160
+  - first:
+      213: 7031998638355864355
+    second: UpResMap_161
+  - first:
+      213: -4387472552723255935
+    second: UpResMap_162
+  - first:
+      213: 5208434502381606415
+    second: UpResMap_163
+  - first:
+      213: -5724531864149749986
+    second: UpResMap_164
+  - first:
+      213: 4847899138022580000
+    second: UpResMap_165
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1918,8 +1969,8 @@ TextureImporter:
       name: UpResMap_65
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320
+        x: 384
+        y: 352
         width: 32
         height: 32
       alignment: 0
@@ -1939,7 +1990,7 @@ TextureImporter:
       name: UpResMap_66
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 320
         width: 32
         height: 32
@@ -1960,7 +2011,7 @@ TextureImporter:
       name: UpResMap_67
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 320
         width: 32
         height: 32
@@ -1981,7 +2032,7 @@ TextureImporter:
       name: UpResMap_68
       rect:
         serializedVersion: 2
-        x: 96
+        x: 64
         y: 320
         width: 32
         height: 32
@@ -2002,7 +2053,7 @@ TextureImporter:
       name: UpResMap_69
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 320
         width: 32
         height: 32
@@ -2023,7 +2074,7 @@ TextureImporter:
       name: UpResMap_70
       rect:
         serializedVersion: 2
-        x: 160
+        x: 128
         y: 320
         width: 32
         height: 32
@@ -2044,7 +2095,7 @@ TextureImporter:
       name: UpResMap_71
       rect:
         serializedVersion: 2
-        x: 192
+        x: 160
         y: 320
         width: 32
         height: 32
@@ -2065,7 +2116,7 @@ TextureImporter:
       name: UpResMap_72
       rect:
         serializedVersion: 2
-        x: 224
+        x: 192
         y: 320
         width: 32
         height: 32
@@ -2086,7 +2137,7 @@ TextureImporter:
       name: UpResMap_73
       rect:
         serializedVersion: 2
-        x: 256
+        x: 224
         y: 320
         width: 32
         height: 32
@@ -2107,7 +2158,7 @@ TextureImporter:
       name: UpResMap_74
       rect:
         serializedVersion: 2
-        x: 288
+        x: 256
         y: 320
         width: 32
         height: 32
@@ -2128,8 +2179,8 @@ TextureImporter:
       name: UpResMap_75
       rect:
         serializedVersion: 2
-        x: 0
-        y: 288
+        x: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -2149,8 +2200,8 @@ TextureImporter:
       name: UpResMap_76
       rect:
         serializedVersion: 2
-        x: 32
-        y: 288
+        x: 320
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -2170,8 +2221,8 @@ TextureImporter:
       name: UpResMap_77
       rect:
         serializedVersion: 2
-        x: 64
-        y: 288
+        x: 352
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -2191,8 +2242,8 @@ TextureImporter:
       name: UpResMap_78
       rect:
         serializedVersion: 2
-        x: 96
-        y: 288
+        x: 384
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -2212,7 +2263,7 @@ TextureImporter:
       name: UpResMap_79
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 288
         width: 32
         height: 32
@@ -2233,7 +2284,7 @@ TextureImporter:
       name: UpResMap_80
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 288
         width: 32
         height: 32
@@ -2254,7 +2305,7 @@ TextureImporter:
       name: UpResMap_81
       rect:
         serializedVersion: 2
-        x: 192
+        x: 64
         y: 288
         width: 32
         height: 32
@@ -2275,7 +2326,7 @@ TextureImporter:
       name: UpResMap_82
       rect:
         serializedVersion: 2
-        x: 224
+        x: 96
         y: 288
         width: 32
         height: 32
@@ -2296,7 +2347,7 @@ TextureImporter:
       name: UpResMap_83
       rect:
         serializedVersion: 2
-        x: 256
+        x: 128
         y: 288
         width: 32
         height: 32
@@ -2317,7 +2368,7 @@ TextureImporter:
       name: UpResMap_84
       rect:
         serializedVersion: 2
-        x: 288
+        x: 160
         y: 288
         width: 32
         height: 32
@@ -2338,8 +2389,8 @@ TextureImporter:
       name: UpResMap_85
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 192
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -2359,8 +2410,8 @@ TextureImporter:
       name: UpResMap_86
       rect:
         serializedVersion: 2
-        x: 32
-        y: 256
+        x: 224
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -2380,8 +2431,8 @@ TextureImporter:
       name: UpResMap_87
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
+        x: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -2401,8 +2452,8 @@ TextureImporter:
       name: UpResMap_88
       rect:
         serializedVersion: 2
-        x: 96
-        y: 256
+        x: 288
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -2422,7 +2473,7 @@ TextureImporter:
       name: UpResMap_89
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 256
         width: 32
         height: 32
@@ -2443,7 +2494,7 @@ TextureImporter:
       name: UpResMap_90
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 256
         width: 32
         height: 32
@@ -2464,7 +2515,7 @@ TextureImporter:
       name: UpResMap_91
       rect:
         serializedVersion: 2
-        x: 192
+        x: 64
         y: 256
         width: 32
         height: 32
@@ -2485,7 +2536,7 @@ TextureImporter:
       name: UpResMap_92
       rect:
         serializedVersion: 2
-        x: 224
+        x: 96
         y: 256
         width: 32
         height: 32
@@ -2506,7 +2557,7 @@ TextureImporter:
       name: UpResMap_93
       rect:
         serializedVersion: 2
-        x: 256
+        x: 128
         y: 256
         width: 32
         height: 32
@@ -2527,7 +2578,7 @@ TextureImporter:
       name: UpResMap_94
       rect:
         serializedVersion: 2
-        x: 288
+        x: 160
         y: 256
         width: 32
         height: 32
@@ -2548,8 +2599,8 @@ TextureImporter:
       name: UpResMap_95
       rect:
         serializedVersion: 2
-        x: 0
-        y: 224
+        x: 192
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -2569,8 +2620,8 @@ TextureImporter:
       name: UpResMap_96
       rect:
         serializedVersion: 2
-        x: 64
-        y: 224
+        x: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -2590,8 +2641,8 @@ TextureImporter:
       name: UpResMap_97
       rect:
         serializedVersion: 2
-        x: 96
-        y: 224
+        x: 256
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -2611,8 +2662,8 @@ TextureImporter:
       name: UpResMap_98
       rect:
         serializedVersion: 2
-        x: 160
-        y: 224
+        x: 288
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -2632,7 +2683,7 @@ TextureImporter:
       name: UpResMap_99
       rect:
         serializedVersion: 2
-        x: 192
+        x: 0
         y: 224
         width: 32
         height: 32
@@ -2653,8 +2704,8 @@ TextureImporter:
       name: UpResMap_100
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 64
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -2674,8 +2725,8 @@ TextureImporter:
       name: UpResMap_101
       rect:
         serializedVersion: 2
-        x: 32
-        y: 192
+        x: 96
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -2695,8 +2746,8 @@ TextureImporter:
       name: UpResMap_102
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
+        x: 160
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -2716,8 +2767,8 @@ TextureImporter:
       name: UpResMap_103
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
+        x: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -2737,7 +2788,7 @@ TextureImporter:
       name: UpResMap_104
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 192
         width: 32
         height: 32
@@ -2758,7 +2809,7 @@ TextureImporter:
       name: UpResMap_105
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 192
         width: 32
         height: 32
@@ -2779,7 +2830,7 @@ TextureImporter:
       name: UpResMap_106
       rect:
         serializedVersion: 2
-        x: 192
+        x: 64
         y: 192
         width: 32
         height: 32
@@ -2800,7 +2851,7 @@ TextureImporter:
       name: UpResMap_107
       rect:
         serializedVersion: 2
-        x: 256
+        x: 96
         y: 192
         width: 32
         height: 32
@@ -2821,7 +2872,7 @@ TextureImporter:
       name: UpResMap_108
       rect:
         serializedVersion: 2
-        x: 288
+        x: 128
         y: 192
         width: 32
         height: 32
@@ -2842,7 +2893,7 @@ TextureImporter:
       name: UpResMap_109
       rect:
         serializedVersion: 2
-        x: 320
+        x: 160
         y: 192
         width: 32
         height: 32
@@ -2863,7 +2914,7 @@ TextureImporter:
       name: UpResMap_110
       rect:
         serializedVersion: 2
-        x: 352
+        x: 192
         y: 192
         width: 32
         height: 32
@@ -2884,8 +2935,8 @@ TextureImporter:
       name: UpResMap_111
       rect:
         serializedVersion: 2
-        x: 0
-        y: 160
+        x: 256
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2905,8 +2956,8 @@ TextureImporter:
       name: UpResMap_112
       rect:
         serializedVersion: 2
-        x: 32
-        y: 160
+        x: 288
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2926,8 +2977,8 @@ TextureImporter:
       name: UpResMap_113
       rect:
         serializedVersion: 2
-        x: 64
-        y: 160
+        x: 320
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2947,8 +2998,8 @@ TextureImporter:
       name: UpResMap_114
       rect:
         serializedVersion: 2
-        x: 96
-        y: 160
+        x: 352
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2968,7 +3019,7 @@ TextureImporter:
       name: UpResMap_115
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 160
         width: 32
         height: 32
@@ -2989,7 +3040,7 @@ TextureImporter:
       name: UpResMap_116
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 160
         width: 32
         height: 32
@@ -3010,7 +3061,7 @@ TextureImporter:
       name: UpResMap_117
       rect:
         serializedVersion: 2
-        x: 192
+        x: 64
         y: 160
         width: 32
         height: 32
@@ -3031,7 +3082,7 @@ TextureImporter:
       name: UpResMap_118
       rect:
         serializedVersion: 2
-        x: 224
+        x: 96
         y: 160
         width: 32
         height: 32
@@ -3052,7 +3103,7 @@ TextureImporter:
       name: UpResMap_119
       rect:
         serializedVersion: 2
-        x: 256
+        x: 128
         y: 160
         width: 32
         height: 32
@@ -3073,7 +3124,7 @@ TextureImporter:
       name: UpResMap_120
       rect:
         serializedVersion: 2
-        x: 288
+        x: 160
         y: 160
         width: 32
         height: 32
@@ -3094,7 +3145,7 @@ TextureImporter:
       name: UpResMap_121
       rect:
         serializedVersion: 2
-        x: 320
+        x: 192
         y: 160
         width: 32
         height: 32
@@ -3115,7 +3166,7 @@ TextureImporter:
       name: UpResMap_122
       rect:
         serializedVersion: 2
-        x: 352
+        x: 224
         y: 160
         width: 32
         height: 32
@@ -3136,8 +3187,8 @@ TextureImporter:
       name: UpResMap_123
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
+        x: 256
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -3157,8 +3208,8 @@ TextureImporter:
       name: UpResMap_124
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 288
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -3178,8 +3229,8 @@ TextureImporter:
       name: UpResMap_125
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 320
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -3199,8 +3250,8 @@ TextureImporter:
       name: UpResMap_126
       rect:
         serializedVersion: 2
-        x: 224
-        y: 128
+        x: 352
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -3220,7 +3271,7 @@ TextureImporter:
       name: UpResMap_127
       rect:
         serializedVersion: 2
-        x: 256
+        x: 96
         y: 128
         width: 32
         height: 32
@@ -3241,7 +3292,7 @@ TextureImporter:
       name: UpResMap_128
       rect:
         serializedVersion: 2
-        x: 288
+        x: 128
         y: 128
         width: 32
         height: 32
@@ -3262,7 +3313,7 @@ TextureImporter:
       name: UpResMap_129
       rect:
         serializedVersion: 2
-        x: 320
+        x: 192
         y: 128
         width: 32
         height: 32
@@ -3283,7 +3334,7 @@ TextureImporter:
       name: UpResMap_130
       rect:
         serializedVersion: 2
-        x: 352
+        x: 224
         y: 128
         width: 32
         height: 32
@@ -3304,8 +3355,8 @@ TextureImporter:
       name: UpResMap_131
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
+        x: 256
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -3325,8 +3376,8 @@ TextureImporter:
       name: UpResMap_132
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 288
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -3346,8 +3397,8 @@ TextureImporter:
       name: UpResMap_133
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 320
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -3367,8 +3418,8 @@ TextureImporter:
       name: UpResMap_134
       rect:
         serializedVersion: 2
-        x: 128
-        y: 96
+        x: 352
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -3388,7 +3439,7 @@ TextureImporter:
       name: UpResMap_135
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 96
         width: 32
         height: 32
@@ -3409,7 +3460,7 @@ TextureImporter:
       name: UpResMap_136
       rect:
         serializedVersion: 2
-        x: 192
+        x: 64
         y: 96
         width: 32
         height: 32
@@ -3430,7 +3481,7 @@ TextureImporter:
       name: UpResMap_137
       rect:
         serializedVersion: 2
-        x: 256
+        x: 96
         y: 96
         width: 32
         height: 32
@@ -3451,7 +3502,7 @@ TextureImporter:
       name: UpResMap_138
       rect:
         serializedVersion: 2
-        x: 288
+        x: 128
         y: 96
         width: 32
         height: 32
@@ -3472,7 +3523,7 @@ TextureImporter:
       name: UpResMap_139
       rect:
         serializedVersion: 2
-        x: 320
+        x: 160
         y: 96
         width: 32
         height: 32
@@ -3493,7 +3544,7 @@ TextureImporter:
       name: UpResMap_140
       rect:
         serializedVersion: 2
-        x: 352
+        x: 192
         y: 96
         width: 32
         height: 32
@@ -3514,8 +3565,8 @@ TextureImporter:
       name: UpResMap_141
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 256
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3535,8 +3586,8 @@ TextureImporter:
       name: UpResMap_142
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 288
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3556,8 +3607,8 @@ TextureImporter:
       name: UpResMap_143
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 320
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3577,8 +3628,8 @@ TextureImporter:
       name: UpResMap_144
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 352
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3598,7 +3649,7 @@ TextureImporter:
       name: UpResMap_145
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 64
         width: 32
         height: 32
@@ -3619,7 +3670,7 @@ TextureImporter:
       name: UpResMap_146
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 64
         width: 32
         height: 32
@@ -3640,7 +3691,7 @@ TextureImporter:
       name: UpResMap_147
       rect:
         serializedVersion: 2
-        x: 192
+        x: 64
         y: 64
         width: 32
         height: 32
@@ -3661,7 +3712,7 @@ TextureImporter:
       name: UpResMap_148
       rect:
         serializedVersion: 2
-        x: 224
+        x: 96
         y: 64
         width: 32
         height: 32
@@ -3674,6 +3725,363 @@ TextureImporter:
       bones: []
       spriteID: e2c57e9fe8b3da620800000000000000
       internalID: 2786949229676289070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_149
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446937696facd8330800000000000000
+      internalID: 3714848428085450308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_150
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c323286942f9250800000000000000
+      internalID: 5953517461255109681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_151
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0442abae6a2d1df20800000000000000
+      internalID: 3445766804259611712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_152
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50ae3ada51012af0800000000000000
+      internalID: -423055400275894180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_153
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496afaaa2989daec0800000000000000
+      internalID: -3554016775229167980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_154
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd86de6a769ff800800000000000000
+      internalID: 648402323954372090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_155
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa53f0a42bb0066a0800000000000000
+      internalID: -6458149005274696273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_156
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6ad8233aab7b400800000000000000
+      internalID: 339945506980341484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_157
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed9b0f8089ecb270800000000000000
+      internalID: 8267739754310376931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_158
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad01488dcf51dacd0800000000000000
+      internalID: -2545354038685986598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_159
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213c3dab19bc4ea20800000000000000
+      internalID: 3090819071048139538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_160
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9facdb1d71531b990800000000000000
+      internalID: -7372052738609394951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_161
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b5b34218da69160800000000000000
+      internalID: 7031998638355864355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_162
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d672985f09c13c0800000000000000
+      internalID: -4387472552723255935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_163
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06185e9593184840800000000000000
+      internalID: 5208434502381606415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_164
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f03f379906e80b0800000000000000
+      internalID: -5724531864149749986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpResMap_165
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f12cca492374340800000000000000
+      internalID: 4847899138022580000
       vertices: []
       indices: 
       edges: []
