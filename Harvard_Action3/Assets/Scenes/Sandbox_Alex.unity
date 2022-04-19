@@ -130,9 +130,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2486894330653624859, guid: a6077be22bf9b4df092a7563ff01a901, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2486894331005041691, guid: a6077be22bf9b4df092a7563ff01a901, type: 3}
       propertyPath: m_ChildCameras.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486894331024599405, guid: a6077be22bf9b4df092a7563ff01a901, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486894331107930247, guid: a6077be22bf9b4df092a7563ff01a901, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3859696245071156596, guid: a6077be22bf9b4df092a7563ff01a901, type: 3}
       propertyPath: m_SleepingMode
@@ -205,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18f383129a1f4c0c8225e3bb9057749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 7
 --- !u!1001 &2012885344
 PrefabInstance:
   m_ObjectHideFlags: 0
