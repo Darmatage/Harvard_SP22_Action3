@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 719e66be6780646e788ddb621bae3544
+guid: cf82217bdd253443da6794fd1f0796dd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8343360962551429045
-    second: FanAnim1_0
+      213: 3842005435988452855
+    second: SmCrucibleGlow_0
   - first:
-      213: -8685792012324523253
-    second: FanAnim1_1
+      213: 7116841439182566217
+    second: SmCrucibleGlow_1
   - first:
-      213: 7734781509398376856
-    second: FanAnim1_2
+      213: 7497944695140694848
+    second: SmCrucibleGlow_2
+  - first:
+      213: 4864436632833688264
+    second: SmCrucibleGlow_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FanAnim1_0
+      name: SmCrucibleGlow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b73db5279299c370800000000000000
-      internalID: 8343360962551429045
+      spriteID: 7f52635969b815530800000000000000
+      internalID: 3842005435988452855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FanAnim1_1
+      name: SmCrucibleGlow_1
       rect:
         serializedVersion: 2
         x: 64
@@ -147,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b03b8702f2ed57780800000000000000
-      internalID: -8685792012324523253
+      spriteID: 943b141159914c260800000000000000
+      internalID: 7116841439182566217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FanAnim1_2
+      name: SmCrucibleGlow_2
       rect:
         serializedVersion: 2
         x: 0
@@ -168,8 +171,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89133fa5dc6775b60800000000000000
-      internalID: 7734781509398376856
+      spriteID: 04bb26379fc0e0860800000000000000
+      internalID: 7497944695140694848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmCrucibleGlow_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2037c3853f18340800000000000000
+      internalID: 4864436632833688264
       vertices: []
       indices: 
       edges: []
