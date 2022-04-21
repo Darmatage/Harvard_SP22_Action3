@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class DamageInstant : MonoBehaviour {
+public class WaterDeath : MonoBehaviour {
 
        public GameHandler gameHandlerObj;
        public int damage = 1;
