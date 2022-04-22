@@ -27,7 +27,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
 
         upForce = new Vector2(0f, thrust);
     }
-        
+
     void Update() {
         if (isGrowing) {
             scale = Mathf.Min(scale + scaleRate * Time.deltaTime, maxSize);
