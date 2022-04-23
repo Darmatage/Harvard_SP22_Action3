@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMarbleScaleController : MonoBehaviour
 {
     private GameObject player;
+    private GameObject blowpipe;
     private Rigidbody2D rigidBody;
 
     private bool isGrowing = false;
@@ -22,6 +23,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
 
     void Start() {
         player = GameObject.FindWithTag("Player");
+        blowpipe = GameObject.FindWithTag("BlowPipe");
         rigidBody = GetComponent<Rigidbody2D>();
         scaleChange = new Vector3(1f, 1f, 1f);
 
@@ -60,12 +62,19 @@ public class PlayerMarbleScaleController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+      if (other.tag == "BlowPipe") {
+        AudioSource BlowPipeSound = blowpipe.GetComponent<AudioSource>();
+        BlowPipeSound.Play();
         isGrowing = true;
         isShrinking = false;
+      }
+
     }
 
     void OnTriggerExit2D(Collider2D other) {
+      if (other.tag == "BlowPipe") {
         isGrowing = false;
         isShrinking = true;
+      }
     }
 }
