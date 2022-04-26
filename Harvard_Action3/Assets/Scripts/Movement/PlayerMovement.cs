@@ -16,8 +16,9 @@ namespace Game.Movement
         private Vector2 lookDirection = new Vector2(1,0);
         public Vector2 GetPlayerVector2() { return lookDirection; }
         private bool PlayerInputIsDisabled = false;
+//        public AudioSource RollSFX;
 
-        private void Awake() 
+        private void Awake()
         {
             playerRigidbody = GetComponent<Rigidbody2D>();
             playerCircleCollider = GetComponent<CircleCollider2D>();
@@ -27,10 +28,10 @@ namespace Game.Movement
         {
             ParticleMove(moveInput);
         }
-        
+
         public void Move(InputAction.CallbackContext value)
         {
-            moveInput = value.ReadValue<Vector2>();            
+            moveInput = value.ReadValue<Vector2>();
         }
 
         private void ParticleMove(Vector2 inputMovement)
@@ -43,8 +44,12 @@ namespace Game.Movement
                 lookDirection.Set(inputMovement.x, inputMovement.y);
                 lookDirection.Normalize();
             }
-
+            // if (!RollSFX.isPlaying){
+            //   RollSFX.Play();
+            // }
+            // else {
+            //   RollSFX.Stop();
+            // }
         }
     }
 }
-
