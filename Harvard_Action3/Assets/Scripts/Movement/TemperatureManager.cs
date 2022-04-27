@@ -31,6 +31,7 @@ public class TemperatureManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log("At top of fixed update");
 		// if (Input.GetKeyDown(KeyCode.E))
 		// {
 			 // timeToDamage = .05f;
@@ -40,6 +41,7 @@ public class TemperatureManager : MonoBehaviour
 			// timeToDamage = 5f;
 		// }
 		// theTimer = timeToDamage;
+
         theTimer -= Time.deltaTime;
 
         if (theTimer <= 0)
@@ -51,10 +53,10 @@ public class TemperatureManager : MonoBehaviour
 
     }
 
-    public void SetColor(Color newColor)
-    {
-        HeatBar.GetComponent<Image>().color = newColor;
-    }
+    // public void SetColor(Color newColor)
+    // {
+    //     HeatBar.GetComponent<Image>().color = newColor;
+    // }
 
     public void TakeDamage(float amount)
     {
