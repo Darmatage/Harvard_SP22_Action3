@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6dddb943daef4ac995475e02bc68049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPlayerHealth: 100
-  healthText: {fileID: 3191214411861942480}
+  StartPlayerHeat: 100
+  textHeat: {fileID: 3191214411861942480}
   tokensText: {fileID: 8487985260538109064}
   isDefending: 0
 --- !u!1001 &9063263983359244970

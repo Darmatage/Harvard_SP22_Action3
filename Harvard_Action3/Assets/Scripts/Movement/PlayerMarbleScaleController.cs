@@ -17,13 +17,21 @@ public class PlayerMarbleScaleController : MonoBehaviour
     float maxSize = 3f;
     float scale = 1f;
     float scaleRate = 1f;
+    int heatRate = 1;
 
+    public GameHandler gameHandler;
+    public TemperatureManager temperatureManager;
     private bool isFloating = false;
     public float thrust = 7f;
 
     void Start() {
+        if (GameObject.FindWithTag("GameHandler") != null){
+            gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+        }
+
         player = GameObject.FindWithTag("Player");
         blowpipe = GameObject.FindWithTag("BlowPipe");
+        temperatureManager = player.GetComponent<TemperatureManager>();
         rigidBody = GetComponent<Rigidbody2D>();
         scaleChange = new Vector3(1f, 1f, 1f);
 
@@ -36,7 +44,9 @@ public class PlayerMarbleScaleController : MonoBehaviour
             scaleChange.x = scale;
             scaleChange.y = scale;
 
-            Debug.Log("Scale grow = " + scale);
+            temperatureManager.adjustHeat(this.heatRate);
+            gameHandler.updateStatsDisplay();
+
             if (scale == maxSize) {
                 isGrowing = false;
                 isFloating = true;
@@ -45,6 +55,9 @@ public class PlayerMarbleScaleController : MonoBehaviour
             scale = Mathf.Max(scale - scaleRate * Time.deltaTime, minSize);
             scaleChange.x = scale;
             scaleChange.y = scale;
+
+            temperatureManager.adjustHeat(-this.heatRate);
+            gameHandler.updateStatsDisplay();
 
             if (scale == minSize) {
                 isShrinking = false;

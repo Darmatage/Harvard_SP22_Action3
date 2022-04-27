@@ -15,7 +15,7 @@ namespace Game.Movement
         private Vector2 moveInput;
         private Vector2 lookDirection = new Vector2(1,0);
         public Vector2 GetPlayerVector2() { return lookDirection; }
-        private bool PlayerInputIsDisabled = false;
+        // private bool PlayerInputIsDisabled = false;
 //        public AudioSource RollSFX;
 
         private void Awake()

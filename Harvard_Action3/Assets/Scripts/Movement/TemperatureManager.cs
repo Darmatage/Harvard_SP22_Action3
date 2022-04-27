@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class TemperatureManager : MonoBehaviour
 {
-    public GameHandler gameHandler;
-    public float startHeat = 100;
-    public float Heat;
+    // playerHeat
+    public int startHeat = 100;
+    public int Heat = 100;
+
     //public GameObject deathEffect;
     public Image HeatBar;
     public Color HeatColor = new Color(0.3f, 0.8f, 0.3f);
@@ -17,15 +18,14 @@ public class TemperatureManager : MonoBehaviour
     //temporary time variables:
     public float timeToDamage = 5f;
     private float theTimer;
-    public float damageAmt = 10f;
-
+    public int damageAmt = 10;
 
 	// connect to oxygenThruster:
 	//public Oxygen_thruster OxyThrust;
 
     private void Start()
     {
-        Heat = startHeat;
+        // Heat = startHeat;
         theTimer = timeToDamage;
     }
 
@@ -49,8 +49,10 @@ public class TemperatureManager : MonoBehaviour
             TakeDamage(damageAmt);
             theTimer = timeToDamage;
         }
+    }
 
-
+    public void adjustHeat(int amount) {
+        Heat += amount;
     }
 
     // public void SetColor(Color newColor)
@@ -58,11 +60,10 @@ public class TemperatureManager : MonoBehaviour
     //     HeatBar.GetComponent<Image>().color = newColor;
     // }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
         Heat -= amount;
-        HeatBar.fillAmount = Heat / startHeat;
-
+        // HeatBar.fillAmount = Heat / startHeat;
     }
 
     // public void FilterOverTime (int filterAmount, int duration)
@@ -83,12 +84,6 @@ public class TemperatureManager : MonoBehaviour
         Debug.Log("You Died");
 
     }
-
-	// connected to GameHandler to update level on total oxygen
-	public float getHeatLevel()
-	{
-		return Heat;
-	}
 
 	// reset
 	public void setHeatLevel100()
