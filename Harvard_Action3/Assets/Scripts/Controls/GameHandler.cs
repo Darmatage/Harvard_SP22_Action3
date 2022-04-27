@@ -36,6 +36,7 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void playerGetHit(int damage){
+
            if (isDefending == false){
                   playerHealth -= damage;
                   if (playerHealth >=0){
