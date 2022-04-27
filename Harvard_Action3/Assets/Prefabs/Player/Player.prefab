@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2462338684776608342}
   - component: {fileID: 1011809998803997142}
   - component: {fileID: 854824995914855142}
+  - component: {fileID: 6243783648597910898}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -214,7 +215,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  RollSFX: {fileID: 0}
 --- !u!114 &2462338684776608342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +336,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6243783648597910898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866706931147153480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8859d6e30ce4f46bfc024d4501a181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHeat: 100
+  Heat: 0
+  HeatBar: {fileID: 0}
+  HeatColor: {r: 0.9622642, g: 0.9394275, b: 0.23148806, a: 1}
+  unHeatColor: {r: 0.58717513, g: 0.80758417, b: 0.8584906, a: 1}
+  timeToDamage: 5
+  damageAmt: 10
 --- !u!1 &866706931984703222
 GameObject:
   m_ObjectHideFlags: 0
