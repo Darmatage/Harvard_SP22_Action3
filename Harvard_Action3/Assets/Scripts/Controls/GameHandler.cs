@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameHandler : MonoBehaviour {
 
       private GameObject player;
-      public static int playerHealth = 100;
-      public int StartPlayerHealth = 100;
-      public GameObject healthText;
+      public static int playerHeat = 100;
+      public int StartPlayerHeat = 100;
+      public GameObject textHeat;
 
       public static int gotTokens = 0;
       public GameObject tokensText;
@@ -23,9 +23,11 @@ public class GameHandler : MonoBehaviour {
 
       void Start(){
             player = GameObject.FindWithTag("Player");
+            playerHeat = player.GetComponent<TemperatureManager>().Heat;
+
             sceneName = SceneManager.GetActiveScene().name;
             //if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
-                  playerHealth = StartPlayerHealth;
+                  playerHeat = StartPlayerHeat;
             //}
             updateStatsDisplay();
       }
@@ -38,26 +40,27 @@ public class GameHandler : MonoBehaviour {
       public void playerGetHit(int damage){
 
            if (isDefending == false){
-                  playerHealth -= damage;
-                  if (playerHealth >=0){
+                  playerHeat -= damage;
+                  if (playerHeat >=0){
                         updateStatsDisplay();
                   }
                   player.GetComponent<PlayerHurt>().playerHit();
             }
 
-           if (playerHealth >= StartPlayerHealth){
-                  playerHealth = StartPlayerHealth;
+           if (playerHeat >= StartPlayerHeat){
+                  playerHeat = StartPlayerHeat;
             }
 
-           if (playerHealth <= 0){
-                  playerHealth = 0;
+           if (playerHeat <= 0){
+                  playerHeat = 0;
                   playerDies();
             }
       }
 
       public void updateStatsDisplay(){
-            Text healthTextTemp = healthText.GetComponent<Text>();
-            healthTextTemp.text = "HEAT: " + playerHealth;
+            Text textHeatTemp = textHeat.GetComponent<Text>();
+            // textHeatTemp.text = "HEAT: " + playerHeat;
+            textHeatTemp.text = player.GetComponent<TemperatureManager>().Heat.ToString();
 
             Text tokensTextTemp = tokensText.GetComponent<Text>();
             tokensTextTemp.text = "FRIT: " + gotTokens;
@@ -81,7 +84,7 @@ public class GameHandler : MonoBehaviour {
 
       public void RestartGame() {
             SceneManager.LoadScene("MainMenu");
-            playerHealth = StartPlayerHealth;
+            playerHeat = StartPlayerHeat;
       }
 
       public void QuitGame() {
