@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMarbleScaleController : MonoBehaviour
 {
     private GameObject player;
-    private GameObject blowpipe;
     private Rigidbody2D rigidBody;
 
     private bool isHeatingUp = false;
@@ -24,7 +23,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
     public TemperatureManager temperatureManager;
     private bool isLighterThanAir = false;
     private bool isFloating = false;
-    public float thrust = 7f;
+    public float thrust = 15f;
 
     // cooling off
     private int coolingTimer = 0;
@@ -35,17 +34,14 @@ public class PlayerMarbleScaleController : MonoBehaviour
         }
 
         player = GameObject.FindWithTag("Player");
-        blowpipe = GameObject.FindWithTag("BlowPipe");
         temperatureManager = player.GetComponent<TemperatureManager>();
-        rigidBody = GetComponent<Rigidbody2D>();
+        rigidBody = player.GetComponent<Rigidbody2D>();
         scaleChange = new Vector3(1f, 1f, 1f);
-
-        upForce = new Vector2(0f, thrust);
     }
 
-    void Update() {
+    void FixedUpdate() {
         if (isGrowing) {
-            scale = Mathf.Min(scale + scaleRate * Time.deltaTime, maxSize);
+            scale = Mathf.Min(scale + scaleRate * Time.fixedDeltaTime, maxSize);
             scaleChange.x = scale;
             scaleChange.y = scale;
 
@@ -57,7 +53,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 }
             }
         } else if (isShrinking) {
-            scale = Mathf.Max(scale - scaleRate * Time.deltaTime, minSize);
+            scale = Mathf.Max(scale - scaleRate * Time.fixedDeltaTime, minSize);
             scaleChange.x = scale;
             scaleChange.y = scale;
 
@@ -68,22 +64,20 @@ public class PlayerMarbleScaleController : MonoBehaviour
             }
         }
 
-
         if (isHeatingUp) {
             temperatureManager.adjustHeat(heatRate);
         }
         gameHandler.updateStatsDisplay();
 
-        if (isFloating) {
-            rigidBody.AddForce(upForce, ForceMode2D.Force);
-        }
-
         if (player.transform.localScale != scaleChange) {
             player.transform.localScale = scaleChange;
         }
-    }
 
-    void FixedUpdate() {
+        if (isFloating) {
+            Debug.Log("Add Force " + upForce);
+            rigidBody.AddForce(new Vector2(0f, thrust), ForceMode2D.Force);
+        }
+
         coolingTimer += 1;
         if (coolingTimer % 6 == 0) {
             // cool off
@@ -95,37 +89,32 @@ public class PlayerMarbleScaleController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-      if (other.tag == "BlowPipe") {
-        AudioSource BlowPipeSound = blowpipe.GetComponent<AudioSource>();
-        BlowPipeSound.Play();
+    // @TODO manage the various player states via a proper state machine
+    public void setBubble() {
         isGrowing = true;
-        isLighterThanAir = true;
         isShrinking = false;
-      } else if (other.tag == "Crucible") {
-        isGrowing = true;
-        isHeatingUp = true;
-        isLighterThanAir = false;
-      } else if (other.tag == "HeatRing") {
-        isHeatingUp = true;
-      } else if (other.tag == "WaterCollider") {
-          if (temperatureManager.Heat > 150) {
-              Debug.Log("SHATTER");
-                Sprite s = player.GetComponent<Sprite>();
-                Destroy(s);
-            }
-        }
+        isLighterThanAir = true;
     }
 
-    void OnTriggerExit2D(Collider2D other) {
-      if (other.tag == "BlowPipe") {
+    public void setNotBubble() {
         isGrowing = false;
         isShrinking = true;
-      } else if (other.tag == "Crucible") {
-          isGrowing = false;
-          isHeatingUp = false;
-      } else if (other.tag == "HeatRing") {
-        isHeatingUp = false;
-      }
     }
+
+    public void setGrowSolid(bool growSolid) {
+        isGrowing = growSolid;
+        isHeatingUp = growSolid;
+
+        // confirm if we need this to be explicitly set here
+        isLighterThanAir = false;
+    }
+
+    public void setHeatingUp(bool heating) {
+        isHeatingUp = heating;
+    }
+
+    public int getHeatLevel() {
+        return temperatureManager.Heat;
+    }
+
 }
