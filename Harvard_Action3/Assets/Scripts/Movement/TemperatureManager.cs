@@ -29,27 +29,27 @@ public class TemperatureManager : MonoBehaviour
         theTimer = timeToDamage;
     }
 
-    void FixedUpdate()
-    {
-        Debug.Log("At top of fixed update");
-		// if (Input.GetKeyDown(KeyCode.E))
-		// {
-			 // timeToDamage = .05f;
-		// }
-		// if (Input.GetKeyUp(KeyCode.E))
-		// {
-			// timeToDamage = 5f;
-		// }
-		// theTimer = timeToDamage;
+    // void FixedUpdate()
+    // {
+    //     Debug.Log("At top of fixed update");
+	// 	// if (Input.GetKeyDown(KeyCode.E))
+	// 	// {
+	// 		 // timeToDamage = .05f;
+	// 	// }
+	// 	// if (Input.GetKeyUp(KeyCode.E))
+	// 	// {
+	// 		// timeToDamage = 5f;
+	// 	// }
+	// 	// theTimer = timeToDamage;
 
-        theTimer -= Time.deltaTime;
+    //     theTimer -= Time.deltaTime;
 
-        if (theTimer <= 0)
-        {
-            TakeDamage(damageAmt);
-            theTimer = timeToDamage;
-        }
-    }
+    //     if (theTimer <= 0)
+    //     {
+    //         TakeDamage(damageAmt);
+    //         theTimer = timeToDamage;
+    //     }
+    // }
 
     public void adjustHeat(int amount) {
         Heat += amount;
@@ -60,11 +60,11 @@ public class TemperatureManager : MonoBehaviour
     //     HeatBar.GetComponent<Image>().color = newColor;
     // }
 
-    public void TakeDamage(int amount)
-    {
-        Heat -= amount;
-        // HeatBar.fillAmount = Heat / startHeat;
-    }
+    // public void TakeDamage(int amount)
+    // {
+    //     Heat -= amount;
+    //     // HeatBar.fillAmount = Heat / startHeat;
+    // }
 
     // public void FilterOverTime (int filterAmount, int duration)
     // {
