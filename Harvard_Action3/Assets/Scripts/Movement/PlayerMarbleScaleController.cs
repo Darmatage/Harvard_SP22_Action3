@@ -117,13 +117,4 @@ public class PlayerMarbleScaleController : MonoBehaviour
         return temperatureManager.Heat;
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "WaterCollider") {
-            if (temperatureManager.Heat > 150) {
-                Debug.Log("SHATTER");
-                    Sprite s = player.GetComponent<Sprite>();
-                    Destroy(s);
-            }
-        }
-    }
 }
