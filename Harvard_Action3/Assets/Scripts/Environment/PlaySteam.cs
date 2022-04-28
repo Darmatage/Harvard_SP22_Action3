@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PlaySteam : MonoBehaviour{
 
-      //public playerVFX playerPowerupVFX;
-public Transform Steam;
+  public ParticleSystem collisionParticleSystem;
 
-      void Start(){
-      // Steam.GetComponent<ParticleSystem> ()emission.enabled = false;
-      // }
-      //
-      // public void OnTriggerEnter2D (Collider2D other){
-      //       if (other.gameObject.tag == "Player"){
+  private void OnTriggerEnter2D (Collider2D other){
+             if (other.gameObject.tag == "Player"){
+               var em = collisionParticleSystem.emission;
+    //           var dur = collisionParticleSystem.duration;
+
+               em.enabled = true;
+               collisionParticleSystem.Play();
       //             Steam.GetComponent<ParticleSystem> ()emission.enabled = true;
       //             StartCoroutine (stopSteam ());
-      //           }
+                }
       //
       //
       //     }
