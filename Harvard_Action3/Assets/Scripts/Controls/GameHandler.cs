@@ -35,6 +35,7 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void playerGetTokens(int newTokens){
+            Debug.Log("playerGetTokens = " + gotTokens + " " + newTokens);
             gotTokens += newTokens;
             updateStatsDisplay();
       }
@@ -73,18 +74,17 @@ public class GameHandler : MonoBehaviour {
       }
 
       IEnumerator DeathPause(){
-//            player.GetComponent<PlayerMove>().isAlive = false;
-  //          player.GetComponent<PlayerJump>().isAlive = false;
             yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene("EndLose");
       }
 
       public void StartGame() {
-            SceneManager.LoadScene("Level1");
+            Debug.Log("Start Game?");
+            SceneManager.LoadScene("Scene_1_Level1");
       }
 
       public void RestartGame() {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Scene_1_Level1");
             playerHeat = StartPlayerHeat;
       }
 
