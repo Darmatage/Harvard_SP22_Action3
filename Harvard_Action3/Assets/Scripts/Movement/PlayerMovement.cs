@@ -9,6 +9,7 @@ namespace Game.Movement
     {
         [SerializeField] float movementSpeed = 5f;
 
+        private GameObject player;
         private Rigidbody2D playerRigidbody;
         public Rigidbody2D GetPlayerRigidbody() { return playerRigidbody; }
         private CircleCollider2D playerCircleCollider;
@@ -24,9 +25,19 @@ namespace Game.Movement
             playerCircleCollider = GetComponent<CircleCollider2D>();
         }
 
+        void Start() {
+            player = GameObject.FindWithTag("Player");
+        }
+
         private void FixedUpdate()
         {
             ParticleMove(moveInput);
+
+            if (moveInput.x == 1) {
+                player.transform.Rotate(0f, 0f, -10f, Space.Self);
+            } else if (moveInput.x == -1) {
+                player.transform.Rotate(0f, 0f, 10f, Space.Self);
+            }
         }
 
         public void Move(InputAction.CallbackContext value)
