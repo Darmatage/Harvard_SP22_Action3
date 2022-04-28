@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameHandler: {fileID: 0}
   temperatureManager: {fileID: 0}
-  thrust: 7
+  thrust: 15
 --- !u!114 &6243783648597910898
 MonoBehaviour:
   m_ObjectHideFlags: 0
