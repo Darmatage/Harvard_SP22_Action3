@@ -29,7 +29,6 @@ public class PlayerMarbleScaleController : MonoBehaviour
     // cooling off
     private int coolingTimer = 0;
 
-
     void Start() {
         if (GameObject.FindWithTag("GameHandler") != null){
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
@@ -68,6 +67,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 isLighterThanAir = false;
             }
         }
+
 
         if (isHeatingUp) {
             temperatureManager.adjustHeat(heatRate);
@@ -108,8 +108,13 @@ public class PlayerMarbleScaleController : MonoBehaviour
         isLighterThanAir = false;
       } else if (other.tag == "HeatRing") {
         isHeatingUp = true;
-      }
-
+      } else if (other.tag == "WaterCollider") {
+          if (temperatureManager.Heat > 150) {
+              Debug.Log("SHATTER");
+                Sprite s = player.GetComponent<Sprite>();
+                Destroy(s);
+            }
+        }
     }
 
     void OnTriggerExit2D(Collider2D other) {
