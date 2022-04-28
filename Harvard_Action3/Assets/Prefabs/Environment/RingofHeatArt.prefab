@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3308967146611338080}
   - component: {fileID: 8611132843086304039}
   - component: {fileID: -4370944930105569341}
+  - component: {fileID: 1975106549121426827}
   m_Layer: 0
   m_Name: RingofHeatArt
   m_TagString: Untagged
@@ -214,7 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeae049a243544ad1a84bf15804ec3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameHandler: {fileID: 0}
 --- !u!61 &-4370944930105569341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -241,3 +241,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33190036, y: 0.55151665}
   m_EdgeRadius: 0
+--- !u!114 &1975106549121426827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897050951736491324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ce769bc1e264ab49adec8019ca1470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameHandler: {fileID: 806602368914741, guid: db94cd547a0874d3caf03d6fcba24a7f, type: 3}
+  isHealthPickUp: 1
+  isSpeedBoostPickUp: 0
+  healthBoost: 50
+  speedBoost: 2
+  speedTime: 2
