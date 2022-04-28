@@ -414,6 +414,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7679424183998058281, guid: 097cc7119f8f74500b92afb513b187dd, type: 3}
+      propertyPath: NextLevel
+      value: Scene_3_Level3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 097cc7119f8f74500b92afb513b187dd, type: 3}
 --- !u!1001 &1290873541
