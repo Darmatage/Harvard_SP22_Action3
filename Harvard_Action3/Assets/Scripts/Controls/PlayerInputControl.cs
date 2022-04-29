@@ -7,7 +7,7 @@ namespace Game.Control
 {
     public class PlayerInputControl : MonoBehaviour
     {
-        public void EscapeAction(InputAction.CallbackContext value) //<- M Key
+        public void EscapeAction(InputAction.CallbackContext value) //<- Esc Key
         {
             if (value.started)
             {
@@ -18,6 +18,7 @@ namespace Game.Control
         {
             if (value.started)
             {
+                EventHandler.CallStateChangeActionEvent();
                 Debug.Log("State Change!");
             }
         }

@@ -7,6 +7,11 @@ TagManager:
   - BlowPipe
   - GameHandler
   - WaterCollider
+  - HeatRing
+  - Crucible
+  - ParticleContainer
+  - WildParticle
+  - SolidContainer
   layers:
   - Default
   - TransparentFX

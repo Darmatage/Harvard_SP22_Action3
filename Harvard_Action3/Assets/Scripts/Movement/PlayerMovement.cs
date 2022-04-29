@@ -8,6 +8,7 @@ namespace Game.Movement
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] float movementSpeed = 5f;
+        [SerializeField] float jumpSpeed = 5f;
 
         private GameObject player;
         private Rigidbody2D playerRigidbody;
@@ -19,14 +20,31 @@ namespace Game.Movement
         // private bool PlayerInputIsDisabled = false;
 //        public AudioSource RollSFX;
 
+        [SerializeField] GameObject solidContainer = null;
+        [SerializeField] GameObject particleContainer = null;
+
         private void Awake()
         {
             playerRigidbody = GetComponent<Rigidbody2D>();
             playerCircleCollider = GetComponent<CircleCollider2D>();
         }
 
-        void Start() {
+        private void OnEnable()
+        {
+            EventHandler.StateChangeActionEvent += ChangeState;
+        }
+
+        private void OnDisable()
+        {
+            EventHandler.StateChangeActionEvent -= ChangeState;
+        }
+
+        void Start() 
+        {
             player = GameObject.FindWithTag("Player");
+
+            solidContainer.SetActive(true);
+            particleContainer.SetActive(false);
         }
 
         private void FixedUpdate()
@@ -45,6 +63,21 @@ namespace Game.Movement
             moveInput = value.ReadValue<Vector2>();
         }
 
+        public float GetMovementSpeed()
+        {
+            return movementSpeed;
+        }
+
+        public float GetJumpSpeed()
+        {
+            return jumpSpeed;
+        }
+
+        public Vector2 GetMoveInput()
+        {
+            return moveInput;
+        }
+
         private void ParticleMove(Vector2 inputMovement)
         {
             Vector2 particleVelocity = new Vector2 (inputMovement.x * movementSpeed, playerRigidbody.velocity.y);
@@ -61,6 +94,21 @@ namespace Game.Movement
             // else {
             //   RollSFX.Stop();
             // }
+        }
+
+        private void ChangeState()
+        {
+            if (solidContainer.activeSelf)
+            {
+                solidContainer.SetActive(false);
+                particleContainer.SetActive(true);
+            }
+            else if (particleContainer.activeSelf)
+            {
+                particleContainer.SetActive(false);
+                solidContainer.SetActive(true);
+            }
+
         }
     }
 }
