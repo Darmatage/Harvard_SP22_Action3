@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_ChildCameras.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3098938730344574661, guid: a6077be22bf9b4df092a7563ff01a901, type: 3}
+      propertyPath: m_Radius
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859696245071156596, guid: a6077be22bf9b4df092a7563ff01a901, type: 3}
+      propertyPath: m_Mass
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7674621542201129512, guid: a6077be22bf9b4df092a7563ff01a901, type: 3}
       propertyPath: m_RootOrder
       value: 0
