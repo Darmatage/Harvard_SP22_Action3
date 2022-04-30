@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soldiMovementSpeed: 5
   liquidMovementSpeed: 2.5
-  liquidClimbLift: 5
+  liquidClimbLift: 15
   solidContainer: {fileID: 7302636112344575585}
   particleContainer: {fileID: 6920334608375312481}
 --- !u!114 &2462338684776608342

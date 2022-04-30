@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Game.UI
 {
@@ -18,6 +19,11 @@ namespace Game.UI
             {
                 child.gameObject.SetActive(child.gameObject == toDisplay);
             }
+        }
+
+        public void StartGame() {
+            Debug.Log("Start Game?");
+            SceneManager.LoadScene("Scene_1_Level1");
         }
 
         public void ExitGameButtonUI()

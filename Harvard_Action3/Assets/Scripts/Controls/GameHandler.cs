@@ -78,10 +78,10 @@ public class GameHandler : MonoBehaviour {
             SceneManager.LoadScene("EndLose");
       }
 
-      public void StartGame() {
-            Debug.Log("Start Game?");
-            SceneManager.LoadScene("Scene_1_Level1");
-      }
+      // public void StartGame() {
+      //       Debug.Log("Start Game?");
+      //       SceneManager.LoadScene("Scene_1_Level1");
+      // }
 
       public void RestartGame() {
             SceneManager.LoadScene("Scene_1_Level1");
@@ -96,7 +96,7 @@ public class GameHandler : MonoBehaviour {
                 #endif
       }
 
-      public void Credits() {
-            SceneManager.LoadScene("Credits");
-      }
+      // public void Credits() {
+      //       SceneManager.LoadScene("Credits");
+      // }
 }
