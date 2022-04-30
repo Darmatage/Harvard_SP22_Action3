@@ -11,6 +11,7 @@ namespace Game.Control
         {
             if (value.started)
             {
+                EventHandler.CallEscapeActionEvent();
                 Debug.Log("Esc Key is pressed!");
             }
         }

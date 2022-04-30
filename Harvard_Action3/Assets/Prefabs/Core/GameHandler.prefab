@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4373125096709188336, guid: c23d2e3d9f28f4a718c40a7dd9cce223, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: UI Canvas - Game Menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c23d2e3d9f28f4a718c40a7dd9cce223, type: 3}

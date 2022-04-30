@@ -5,13 +5,12 @@ using UnityEngine.InputSystem;
 
 namespace Game.Movement
 {
-    public class ParticleMovement : MonoBehaviour
+    public class LiquidFormMovement : MonoBehaviour
     {
         private float movementSpeed;
-        private float jumpSpeed;
+        private float climbLift;
         private Rigidbody2D particleRigidbody;
         private CircleCollider2D particleCircleCollider;
-        private Vector2 moveInput;
         private Vector2 lookDirection = new Vector2(1,0);
         private PlayerMovement playerMovement;
 
@@ -24,18 +23,18 @@ namespace Game.Movement
 
         private void Start()
         {
-            movementSpeed = playerMovement.GetMovementSpeed();
-            jumpSpeed = playerMovement.GetJumpSpeed();
+            movementSpeed = playerMovement.GetLiquidMovementSpeed();
+            climbLift = playerMovement.GetLiquidClimbLift();
         }
 
         private void OnEnable()
         {
-            EventHandler.JumpActionEvent += Jump;
+            EventHandler.ClimbActionEvent += Climb;
         }
 
         private void OnDisable()
         {
-            EventHandler.JumpActionEvent -= Jump;
+            EventHandler.ClimbActionEvent -= Climb;
         }
 
         private void FixedUpdate()
@@ -53,26 +52,26 @@ namespace Game.Movement
                 lookDirection.Set(inputMovement.x, inputMovement.y);
                 lookDirection.Normalize();
             }
-
         }
 
-        public void Jump() 
+        private void Climb() 
         {
             //if(!isAlive){ return; }
-            if(!particleRigidbody.IsTouchingLayers(LayerMask.GetMask("JumpSurface"))) return;
+            if(!particleRigidbody.IsTouchingLayers(LayerMask.GetMask("ClimbSurface"))) return;
 
             if(lookDirection == Vector2.right)
             {
                 //Debug.Log("Jump Right");
-                particleRigidbody.velocity += new Vector2 (0f, jumpSpeed);
+                particleRigidbody.velocity += new Vector2 (0f, climbLift);
             }
 
             if(lookDirection == Vector2.left)
             {
                 //Debug.Log("Jump Left");
-                particleRigidbody.velocity += new Vector2 (0f, jumpSpeed);
+                particleRigidbody.velocity += new Vector2 (0f, climbLift);
             }
         }
+
     }
 }
 
