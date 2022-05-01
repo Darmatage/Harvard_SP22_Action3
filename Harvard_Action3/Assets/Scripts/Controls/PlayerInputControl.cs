@@ -7,10 +7,11 @@ namespace Game.Control
 {
     public class PlayerInputControl : MonoBehaviour
     {
-        public void EscapeAction(InputAction.CallbackContext value) //<- M Key
+        public void EscapeAction(InputAction.CallbackContext value) //<- Esc Key
         {
             if (value.started)
             {
+                EventHandler.CallEscapeActionEvent();
                 Debug.Log("Esc Key is pressed!");
             }
         }
@@ -18,6 +19,7 @@ namespace Game.Control
         {
             if (value.started)
             {
+                EventHandler.CallStateChangeActionEvent();
                 Debug.Log("State Change!");
             }
         }

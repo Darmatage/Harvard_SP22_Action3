@@ -149,8 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4025a2df27b946e09be86193885542c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameHandlerObj: {fileID: 0}
-  damage: 1
 --- !u!1 &2380862570707328663
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +163,7 @@ GameObject:
   - component: {fileID: 4704739628726326656}
   - component: {fileID: 5860681853783718508}
   - component: {fileID: 1459732199445376999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colliders_TM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +283,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
@@ -305,7 +303,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a19ac4ff54f9c40778cb27e37c74c310, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -319,7 +317,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 2380862570707328663}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a19ac4ff54f9c40778cb27e37c74c310, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -327,7 +325,9 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 4704739628726326656}
+    m_ColliderPaths: []
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005

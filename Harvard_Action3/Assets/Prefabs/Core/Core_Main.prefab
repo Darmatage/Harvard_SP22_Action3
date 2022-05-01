@@ -114,6 +114,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 7674621541130926991}
+    - target: {fileID: 7366982701527828146, guid: c156003378f4c43cfba58c903ae7abc1, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7785978
+      objectReference: {fileID: 0}
     - target: {fileID: 7366982702101046722, guid: c156003378f4c43cfba58c903ae7abc1, type: 3}
       propertyPath: m_Name
       value: Camera
