@@ -23,7 +23,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
     public TemperatureManager temperatureManager;
     private bool isLighterThanAir = false;
     private bool isFloating = false;
-    public float thrust = 15f;
+    public float thrust = 30f;
 
     // cooling off
     private int coolingTimer = 0;
