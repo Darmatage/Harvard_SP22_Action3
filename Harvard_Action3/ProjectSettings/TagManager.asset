@@ -49,3 +49,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Colliders
+    uniqueID: 2741804751
+    locked: 0
