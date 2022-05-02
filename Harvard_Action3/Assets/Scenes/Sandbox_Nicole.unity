@@ -293,7 +293,7 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 0003040508
+  m_VertexStreams: 000103040508
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -5177,7 +5177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480637286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.29, y: 2.43, z: 0}
+  m_LocalPosition: {x: 7.25, y: 0.38, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1135484120}
@@ -5395,7 +5395,7 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 0003040508
+  m_VertexStreams: 000103040508
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -10274,7 +10274,7 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 0003040508
+  m_VertexStreams: 000103040508
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -10533,7 +10533,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0.1
+      minScalar: 0.8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -15174,7 +15174,7 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 0003040508
+  m_VertexStreams: 000103040508
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -20395,8 +20395,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 0.1
+      scalar: 2
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -20553,8 +20553,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0
+      minMaxState: 1
+      scalar: 3.1415927
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -20606,8 +20606,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0
+      minMaxState: 1
+      scalar: 3.1415927
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -20659,15 +20659,15 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: -6.283185
+      minMaxState: 1
+      scalar: 6.283185
       minScalar: 6.283185
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: -0.02702713
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -20676,7 +20676,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
+          value: 0.8918915
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -21030,7 +21030,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -25237,7 +25237,7 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 0003040508
+  m_VertexStreams: 000103040508
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -30415,7 +30415,7 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 0003040508
+  m_VertexStreams: 000103040508
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -35369,7 +35369,7 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 0003040508
+  m_VertexStreams: 000103040508
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
