@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaterColliderController : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other) {
-		if (other.tag == "Player") {
+		if (other.tag == "SolidContainer") {
             int heat = other.gameObject.GetComponent<PlayerMarbleScaleController>().getHeatLevel();
 
 			if (heat > 150) {
