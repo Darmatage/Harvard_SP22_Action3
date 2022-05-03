@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMarbleScaleController : MonoBehaviour
 {
     private GameObject player;
+    private PlayerStateController playerStateController;
     private Rigidbody2D rigidBody;
 
-    private bool isHeatingUp = false;
     private bool isGrowing = false;
     private bool isShrinking = false;
     private Vector3 scaleChange;
@@ -19,13 +19,13 @@ public class PlayerMarbleScaleController : MonoBehaviour
     float scaleRate = 1f;
     int heatRate = 1;
 
-    public GameHandler gameHandler;
-    public TemperatureManager temperatureManager;
+    private GameHandler gameHandler;
+    private TemperatureManager temperatureManager;
     private bool isLighterThanAir = false;
-    private bool isFloating = false;
     public float thrust = 30f;
 
     // cooling off
+    private int heatingTimer = 0;
     private int coolingTimer = 0;
 
     void Start() {
@@ -34,59 +34,79 @@ public class PlayerMarbleScaleController : MonoBehaviour
         }
 
         player = GameObject.FindWithTag("Player");
+        playerStateController = player.GetComponent<PlayerStateController>();
         temperatureManager = player.GetComponent<TemperatureManager>();
         rigidBody = player.GetComponent<Rigidbody2D>();
         scaleChange = new Vector3(1f, 1f, 1f);
     }
 
     void FixedUpdate() {
-        if (isGrowing) {
-            scale = Mathf.Min(scale + scaleRate * Time.fixedDeltaTime, maxSize);
-            scaleChange.x = scale;
-            scaleChange.y = scale;
-
-            if (scale == maxSize) {
-                isGrowing = false;
-
-                if (isLighterThanAir) {
-                    isFloating = true;
+        switch (playerStateController.state) {
+            case PlayerStateController.MARBLE:
+                if (temperatureManager.Heat > TemperatureManager.MARBLE_MAX_HEAT) {
+                    playerStateController.setState(PlayerStateController.MALLEABLE);
+                    EventHandler.CallStateChangeActionEvent();
                 }
+                break;
+            case PlayerStateController.MALLEABLE:
+                if (temperatureManager.Heat < TemperatureManager.MALLEABLE_STATE_MIN_HEAT) {
+                    playerStateController.setState(PlayerStateController.MARBLE);
+                    EventHandler.CallStateChangeActionEvent();
+                }
+
+                if (isGrowing) {
+                    scale = Mathf.Min(scale + scaleRate * Time.fixedDeltaTime, maxSize);
+                    scaleChange.x = scale;
+                    scaleChange.y = scale;
+
+                    if (scale == maxSize) {
+                        isGrowing = false;
+                        playerStateController.setState(PlayerStateController.BUBBLE);
+                        playerStateController.bubbleStartHeat = temperatureManager.Heat;
+                    }
+                } else if (isShrinking) {
+                    scale = Mathf.Max(scale - scaleRate * Time.fixedDeltaTime, minSize);
+                    scaleChange.x = scale;
+                    scaleChange.y = scale;
+
+                    if (scale == minSize) {
+                        isShrinking = false;
+                        isLighterThanAir = false;
+                        rigidBody.gravityScale = 1;
+                    }
+                }
+
+                if (player.transform.localScale != scaleChange) {
+                    player.transform.localScale = scaleChange;
+                }
+                break;
+            case PlayerStateController.BUBBLE:
+                if ((playerStateController.bubbleStartHeat - temperatureManager.Heat) < PlayerStateController.BUBBLE_FLOATING_TEMP_RANGE) {
+                    rigidBody.gravityScale = -1;
+                } else {
+                    rigidBody.gravityScale = 1;
+                }
+                break;
+            default:
+                break;
+        }
+
+        if (temperatureManager.isHeatingUp) {
+            heatingTimer += 1;
+            if (temperatureManager.Heat < 100 && heatingTimer % 3 == 0) {
+                temperatureManager.adjustHeat(heatRate);
+                heatingTimer = 0;
             }
-        } else if (isShrinking) {
-            scale = Mathf.Max(scale - scaleRate * Time.fixedDeltaTime, minSize);
-            scaleChange.x = scale;
-            scaleChange.y = scale;
+        } else {
+            coolingTimer += 1;
 
-            if (scale == minSize) {
-                isShrinking = false;
-                isFloating = false;
-                isLighterThanAir = false;
-            }
-        }
-
-        if (isHeatingUp) {
-            temperatureManager.adjustHeat(heatRate);
-        }
-        gameHandler.updateStatsDisplay();
-
-        if (player.transform.localScale != scaleChange) {
-            player.transform.localScale = scaleChange;
-        }
-
-        if (isFloating) {
-            Debug.Log("Add Force " + upForce);
-            rigidBody.AddForce(new Vector2(0f, thrust), ForceMode2D.Force);
-        }
-
-        coolingTimer += 1;
-        if (coolingTimer % 6 == 0) {
-            // cool off
-            if (!isHeatingUp && temperatureManager.Heat > 0) {
+            if (temperatureManager.Heat > 0 && coolingTimer % 6 == 0) {
                 temperatureManager.adjustHeat(-heatRate);
+                coolingTimer = 0;
             }
-
-            coolingTimer = 0;
         }
+
+        gameHandler.updateStatsDisplay();
     }
 
     // @TODO manage the various player states via a proper state machine
@@ -103,14 +123,14 @@ public class PlayerMarbleScaleController : MonoBehaviour
 
     public void setGrowSolid(bool growSolid) {
         isGrowing = growSolid;
-        isHeatingUp = growSolid;
+        temperatureManager.isHeatingUp = growSolid;
 
         // confirm if we need this to be explicitly set here
         isLighterThanAir = false;
     }
 
     public void setHeatingUp(bool heating) {
-        isHeatingUp = heating;
+        temperatureManager.isHeatingUp = heating;
     }
 
     public int getHeatLevel() {

@@ -239,8 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18f383129a1f4c0c8225e3bb9057749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameHandler: {fileID: 0}
-  temperatureManager: {fileID: 0}
   thrust: 15
 --- !u!114 &6243783648597910898
 MonoBehaviour:
@@ -254,8 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8859d6e30ce4f46bfc024d4501a181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHeat: 100
-  Heat: 100
+  startHeat: 30
+  Heat: 30
   HeatBar: {fileID: 0}
   HeatColor: {r: 0.9622642, g: 0.9394275, b: 0.23148806, a: 1}
   unHeatColor: {r: 0.58717513, g: 0.80758417, b: 0.8584906, a: 1}

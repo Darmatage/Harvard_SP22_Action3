@@ -5,22 +5,28 @@ using UnityEngine;
 public class BlowpipeController : MonoBehaviour
 {
     private AudioSource blowpipeSound;
+    private GameObject player;
 
     void Start() {
         blowpipeSound = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player") {
+        string parentTag = other.transform.parent.gameObject.tag;
+        if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
             blowpipeSound.Play();
 
-            other.gameObject.GetComponent<PlayerMarbleScaleController>().setBubble();
+            player = GameObject.FindWithTag("Player");
+            player.GetComponent<PlayerMarbleScaleController>().setBubble();
+            player.gameObject.GetComponent<PlayerStateController>().setState(PlayerStateController.BUBBLE);
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == "Player") {
-            other.gameObject.GetComponent<PlayerMarbleScaleController>().setNotBubble();
+        string parentTag = other.transform.parent.gameObject.tag;
+        if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
+            player = GameObject.FindWithTag("Player");
+            player.gameObject.GetComponent<PlayerMarbleScaleController>().setNotBubble();
         }
     }
 }

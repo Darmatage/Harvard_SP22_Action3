@@ -15,6 +15,8 @@ namespace Game.Movement
         [SerializeField] GameObject particleContainer = null;
 
         private GameObject player;
+        private PlayerStateController playerStateController;
+
         private Rigidbody2D playerRigidbody;
         public Rigidbody2D GetPlayerRigidbody() { return playerRigidbody; }
         private Vector2 moveInput;
@@ -28,6 +30,7 @@ namespace Game.Movement
         private void Awake()
         {
             playerRigidbody = GetComponent<Rigidbody2D>();
+            playerStateController = GetComponent<PlayerStateController>();
             //playerCircleCollider = GetComponent<CircleCollider2D>();
         }
 
@@ -52,9 +55,13 @@ namespace Game.Movement
         private void FixedUpdate()
         {
             if (moveInput.x == 1) {
-                player.transform.Rotate(0f, 0f, -10f, Space.Self);
+                if (playerStateController.state == PlayerStateController.MARBLE) {
+                    player.transform.Rotate(0f, 0f, -10f, Space.Self);
+                }
             } else if (moveInput.x == -1) {
-                player.transform.Rotate(0f, 0f, 10f, Space.Self);
+                if (playerStateController.state == PlayerStateController.MARBLE) {
+                    player.transform.Rotate(0f, 0f, 10f, Space.Self);
+                }
             }
         }
 

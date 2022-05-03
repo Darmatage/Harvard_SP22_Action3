@@ -5,14 +5,16 @@ using UnityEngine;
 public class HeatRingController : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player") {
-            other.gameObject.GetComponent<PlayerMarbleScaleController>().setHeatingUp(true);
+        string parentTag = other.transform.parent.gameObject.tag;
+        if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
+            GameObject.FindWithTag("Player").GetComponent<TemperatureManager>().isHeatingUp = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == "Player") {
-            other.gameObject.GetComponent<PlayerMarbleScaleController>().setHeatingUp(false);
+        string parentTag = other.transform.parent.gameObject.tag;
+        if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
+            GameObject.FindWithTag("Player").GetComponent<TemperatureManager>().isHeatingUp = false;
         }
     }
 }
