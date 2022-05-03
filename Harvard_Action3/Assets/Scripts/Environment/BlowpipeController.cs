@@ -13,20 +13,28 @@ public class BlowpipeController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         string parentTag = other.transform.parent.gameObject.tag;
-        if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
-            blowpipeSound.Play();
+        player = GameObject.FindWithTag("Player");
 
-            player = GameObject.FindWithTag("Player");
-            player.GetComponent<PlayerMarbleScaleController>().setBubble();
-            player.gameObject.GetComponent<PlayerStateController>().setState(PlayerStateController.BUBBLE);
+        if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
+            if (player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount == 0) {
+                blowpipeSound.Play();
+
+                player = GameObject.FindWithTag("Player");
+                player.GetComponent<PlayerMarbleScaleController>().setBubble();
+            }
+            player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount++;
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
         string parentTag = other.transform.parent.gameObject.tag;
+
+        player = GameObject.FindWithTag("Player");
         if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
-            player = GameObject.FindWithTag("Player");
-            player.gameObject.GetComponent<PlayerMarbleScaleController>().setNotBubble();
+            player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount--;
+            // if (player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount == 0) {
+            //     player.gameObject.GetComponent<PlayerMarbleScaleController>().setNotBubble();
+            // }
         }
     }
 }
