@@ -11,15 +11,16 @@ public class BlowpipeController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player") {
+        if (other.tag == "SolidContainer") {
             blowpipeSound.Play();
 
             other.gameObject.GetComponent<PlayerMarbleScaleController>().setBubble();
+            other.gameObject.GetComponent<PlayerStateController>().setState(PlayerStateController.BUBBLE);
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == "Player") {
+        if (other.tag == "SolidContainer") {
             other.gameObject.GetComponent<PlayerMarbleScaleController>().setNotBubble();
         }
     }
