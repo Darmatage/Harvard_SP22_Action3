@@ -6,9 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class TemperatureManager : MonoBehaviour
 {
+    public const int MARBLE_MIN_HEAT = 0;
+    public const int MARBLE_MAX_HEAT = 30;
+    public const int MALLEABLE_STATE_MIN_HEAT = 31;
+    public const int MALLEABLE_STATE_MAX_HEAT = 100;
+
     // playerHeat
-    public int startHeat = 100;
-    public int Heat = 100;
+    public int startHeat = 30;
+    public int Heat = 30;
+
+    public bool isHeatingUp;
 
     //public GameObject deathEffect;
     public Image HeatBar;
@@ -20,63 +27,15 @@ public class TemperatureManager : MonoBehaviour
     private float theTimer;
     public int damageAmt = 10;
 
-	// connect to oxygenThruster:
-	//public Oxygen_thruster OxyThrust;
-
     private void Start()
     {
-        // Heat = startHeat;
+        Heat = startHeat;
         theTimer = timeToDamage;
     }
-
-    // void FixedUpdate()
-    // {
-    //     Debug.Log("At top of fixed update");
-	// 	// if (Input.GetKeyDown(KeyCode.E))
-	// 	// {
-	// 		 // timeToDamage = .05f;
-	// 	// }
-	// 	// if (Input.GetKeyUp(KeyCode.E))
-	// 	// {
-	// 		// timeToDamage = 5f;
-	// 	// }
-	// 	// theTimer = timeToDamage;
-
-    //     theTimer -= Time.deltaTime;
-
-    //     if (theTimer <= 0)
-    //     {
-    //         TakeDamage(damageAmt);
-    //         theTimer = timeToDamage;
-    //     }
-    // }
 
     public void adjustHeat(int amount) {
         Heat += amount;
     }
-
-    // public void SetColor(Color newColor)
-    // {
-    //     HeatBar.GetComponent<Image>().color = newColor;
-    // }
-
-    // public void TakeDamage(int amount)
-    // {
-    //     Heat -= amount;
-    //     // HeatBar.fillAmount = Heat / startHeat;
-    // }
-
-    // public void FilterOverTime (int filterAmount, int duration)
-    // {
-    //     StartCoroutine(FilterOverTimeCoroutine(filterAmount, duration));
-    // }
-    //
-    // public void SpendOverTime(int spendAmount, int duration)
-    // {
-    //     StartCoroutine(SpendOverTimeCoroutine(spendAmount, duration));
-    // }
-
-
 
     public void Die()
     {
@@ -84,39 +43,4 @@ public class TemperatureManager : MonoBehaviour
         Debug.Log("You Died");
 
     }
-
-	// reset
-	public void setHeatLevel100()
-	{
-		Debug.Log("Temperature replenished!");
-		Heat = startHeat;
-		// return Ox;
-	}
-
-    // IEnumerator FilterOverTimeCoroutine(float filterAmount, float duration)
-    // {
-    //     float amountFiltered = 0;
-    //     float filterPerLoop = filterAmount / duration;
-    //     while (amountFiltered < filterAmount)
-    //     {
-    //         Ox += filterPerLoop;
-    //         amountFiltered += filterPerLoop;
-    //         yield return new WaitForSeconds(1f);
-    //     }
-    // }
-
-    // IEnumerator SpendOverTimeCoroutine(float spendAmount, float duration)
-    // {
-    //     float amountSpent = 0;
-    //     float spendPerLoop = spendAmount / duration;
-    //     while (amountSpent < spendAmount)
-    //     {
-    //         Ox += spendPerLoop;
-    //         Debug.Log(Ox.ToString());
-    //         amountSpent += spendPerLoop;
-    //         yield return new WaitForSeconds(1f);
-    //     }
-    // }
-
-
 }

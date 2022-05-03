@@ -7,6 +7,11 @@ TagManager:
   - BlowPipe
   - GameHandler
   - WaterCollider
+  - HeatRing
+  - Crucible
+  - ParticleContainer
+  - WildParticle
+  - SolidContainer
   layers:
   - Default
   - TransparentFX
@@ -14,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - ClimbSurface
   - 
   - 
   - 
@@ -43,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Colliders
+    uniqueID: 2741804751
     locked: 0

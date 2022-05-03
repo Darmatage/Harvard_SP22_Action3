@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 11
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.46226418, g: 0.4121129, b: 0.4121129, a: 1}
   m_FlipX: 0
@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7853683083421403719}
   - component: {fileID: 7853683083421403712}
   - component: {fileID: 201231859666486893}
+  - component: {fileID: 2307271424964259798}
   m_Layer: 0
   m_Name: BlowPipe
   m_TagString: BlowPipe
@@ -239,6 +240,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2307271424964259798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853683083421403713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f072566d301294062a5acbe50673e02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7853683083676276337
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,8 @@ public class PickUp : MonoBehaviour{
       }
 
       public void OnTriggerEnter2D (Collider2D other) {
-            if (other.gameObject.tag == "Player"){
+            string parentTag = other.transform.parent.gameObject.tag;
+            if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
                   GetComponent<Collider2D>().enabled = false;
                   GetComponent<AudioSource>().Play();
                   StartCoroutine(DestroyThis());

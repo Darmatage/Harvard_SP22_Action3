@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 3275309776944375187}
   - component: {fileID: 4897519868691292981}
   - component: {fileID: 2308393023858069061}
+  - component: {fileID: 9200766802440809029}
   m_Layer: 0
   m_Name: LgCrucible
   m_TagString: Crucible
@@ -269,5 +270,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeae049a243544ad1a84bf15804ec3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9200766802440809029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670666174597700162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7885de20bf64537a0ea0e9c8ebe7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
