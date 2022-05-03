@@ -8,8 +8,8 @@ public class TemperatureManager : MonoBehaviour
 {
     public const int MARBLE_MIN_HEAT = 0;
     public const int MARBLE_MAX_HEAT = 30;
-    public const int HOT_STATE_MIN_HEAT = 31;
-    public const int HOT_STATE_MAX_HEAT = 100;
+    public const int MALLEABLE_STATE_MIN_HEAT = 31;
+    public const int MALLEABLE_STATE_MAX_HEAT = 100;
 
     // playerHeat
     public int startHeat = 30;

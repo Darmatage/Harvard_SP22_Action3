@@ -49,6 +49,11 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 }
                 break;
             case PlayerStateController.MALLEABLE:
+                if (temperatureManager.Heat < TemperatureManager.MALLEABLE_STATE_MIN_HEAT) {
+                    playerStateController.setState(PlayerStateController.MARBLE);
+                    EventHandler.CallStateChangeActionEvent();
+                }
+
                 if (isGrowing) {
                     scale = Mathf.Min(scale + scaleRate * Time.fixedDeltaTime, maxSize);
                     scaleChange.x = scale;
