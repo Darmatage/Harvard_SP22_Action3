@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8911010842085064173}
   - component: {fileID: 3487637748364739101}
   m_Layer: 0
-  m_Name: BG-20
+  m_Name: BG-10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
