@@ -8,6 +8,8 @@ public class PlayerMarbleScaleController : MonoBehaviour
     private PlayerStateController playerStateController;
     private Rigidbody2D rigidBody;
 
+    public int particleTriggerCount = 0;
+
     private bool isGrowing = false;
     private bool isShrinking = false;
     private Vector3 scaleChange;
@@ -54,6 +56,15 @@ public class PlayerMarbleScaleController : MonoBehaviour
                     EventHandler.CallStateChangeActionEvent();
                 }
 
+                if (isLighterThanAir) {
+                    EventHandler.CallStateChangeActionEvent();
+                    playerStateController.setState(PlayerStateController.BUBBLE);
+                    playerStateController.bubbleStartHeat = temperatureManager.Heat;
+                    isLighterThanAir = false;
+                    isGrowing = true;
+                }
+                break;
+            case PlayerStateController.BUBBLE:
                 if (isGrowing) {
                     scale = Mathf.Min(scale + scaleRate * Time.fixedDeltaTime, maxSize);
                     scaleChange.x = scale;
@@ -61,31 +72,31 @@ public class PlayerMarbleScaleController : MonoBehaviour
 
                     if (scale == maxSize) {
                         isGrowing = false;
-                        playerStateController.setState(PlayerStateController.BUBBLE);
-                        playerStateController.bubbleStartHeat = temperatureManager.Heat;
                     }
-                } else if (isShrinking) {
-                    scale = Mathf.Max(scale - scaleRate * Time.fixedDeltaTime, minSize);
-                    scaleChange.x = scale;
-                    scaleChange.y = scale;
-
-                    if (scale == minSize) {
-                        isShrinking = false;
-                        isLighterThanAir = false;
+                } else {
+                    Debug.Log("Bubble Start Heat = " + playerStateController.bubbleStartHeat);
+                    Debug.Log("deltaT = " + (playerStateController.bubbleStartHeat - temperatureManager.Heat));
+                    if ((playerStateController.bubbleStartHeat - temperatureManager.Heat) < PlayerStateController.BUBBLE_FLOATING_TEMP_RANGE) {
+                        rigidBody.gravityScale = -1;
+                    } else {
                         rigidBody.gravityScale = 1;
                     }
                 }
+                // } else if (isShrinking) {
+                //     scale = Mathf.Max(scale - scaleRate * Time.fixedDeltaTime, minSize);
+                //     scaleChange.x = scale;
+                //     scaleChange.y = scale;
 
+                //     if (scale == minSize) {
+                //         isShrinking = false;
+                //         isLighterThanAir = false;
+                //         rigidBody.gravityScale = 1;
+                //     }
+                
                 if (player.transform.localScale != scaleChange) {
                     player.transform.localScale = scaleChange;
                 }
-                break;
-            case PlayerStateController.BUBBLE:
-                if ((playerStateController.bubbleStartHeat - temperatureManager.Heat) < PlayerStateController.BUBBLE_FLOATING_TEMP_RANGE) {
-                    rigidBody.gravityScale = -1;
-                } else {
-                    rigidBody.gravityScale = 1;
-                }
+
                 break;
             default:
                 break;
@@ -100,7 +111,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
         } else {
             coolingTimer += 1;
 
-            if (temperatureManager.Heat > 0 && coolingTimer % 6 == 0) {
+            if (temperatureManager.Heat > 0 && coolingTimer % 12 == 0) {
                 temperatureManager.adjustHeat(-heatRate);
                 coolingTimer = 0;
             }
@@ -119,6 +130,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
     public void setNotBubble() {
         isGrowing = false;
         isShrinking = true;
+        isLighterThanAir = false;
     }
 
     public void setGrowSolid(bool growSolid) {
