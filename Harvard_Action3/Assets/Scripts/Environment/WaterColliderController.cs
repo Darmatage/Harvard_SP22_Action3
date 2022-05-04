@@ -1,15 +1,19 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaterColliderController : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other) {
-		if (other.tag == "SolidContainer") {
-            int heat = other.gameObject.GetComponent<PlayerMarbleScaleController>().getHeatLevel();
+    GameObject player;
 
-			if (heat > 150) {
-				Debug.Log("SHATTER");
+    void OnTriggerEnter2D(Collider2D other) {
+        string parentTag = other.transform.parent.gameObject.tag;
+
+        player = GameObject.FindWithTag("Player");
+        if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
+			if (player.GetComponent<PlayerStateController>().state == PlayerStateController.MALLEABLE) {
+				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 				// Sprite s = player.GetComponent<Sprite>();
 				// Destroy(s);
 			}
