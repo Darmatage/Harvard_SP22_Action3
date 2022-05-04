@@ -61,3 +61,5 @@ crashlytics-build.properties
 
 # Mac OS Finder files
 *.DS_Store
+Harvard_Action3/Assets/Scripts/Environment/parallax_2.cs
+Harvard_Action3/Assets/Scripts/Environment/parallax_2.cs.meta
