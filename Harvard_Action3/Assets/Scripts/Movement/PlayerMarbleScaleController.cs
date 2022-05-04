@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMarbleScaleController : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class PlayerMarbleScaleController : MonoBehaviour
     }
 
     void FixedUpdate() {
+        if (temperatureManager.Heat == 0) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
         switch (playerStateController.state) {
             case PlayerStateController.MARBLE:
                 if (temperatureManager.Heat > TemperatureManager.MARBLE_MAX_HEAT) {
@@ -73,6 +78,11 @@ public class PlayerMarbleScaleController : MonoBehaviour
                     if (scale == maxSize) {
                         isGrowing = false;
                     }
+                } else if (isShrinking) {
+                    scaleChange.x = minSize;
+                    scaleChange.y = minSize;
+                    isShrinking = false;
+                    playerStateController.setState(PlayerStateController.MARBLE);
                 } else {
                     Debug.Log("Bubble Start Heat = " + playerStateController.bubbleStartHeat);
                     Debug.Log("deltaT = " + (playerStateController.bubbleStartHeat - temperatureManager.Heat));
@@ -82,16 +92,6 @@ public class PlayerMarbleScaleController : MonoBehaviour
                         rigidBody.gravityScale = 1;
                     }
                 }
-                // } else if (isShrinking) {
-                //     scale = Mathf.Max(scale - scaleRate * Time.fixedDeltaTime, minSize);
-                //     scaleChange.x = scale;
-                //     scaleChange.y = scale;
-
-                //     if (scale == minSize) {
-                //         isShrinking = false;
-                //         isLighterThanAir = false;
-                //         rigidBody.gravityScale = 1;
-                //     }
                 
                 if (player.transform.localScale != scaleChange) {
                     player.transform.localScale = scaleChange;

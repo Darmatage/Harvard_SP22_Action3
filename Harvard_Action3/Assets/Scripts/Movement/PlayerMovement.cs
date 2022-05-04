@@ -54,12 +54,10 @@ namespace Game.Movement
 
         private void FixedUpdate()
         {
-            if (moveInput.x == 1) {
-                if (playerStateController.state == PlayerStateController.MARBLE) {
+            if (playerStateController.state == PlayerStateController.MARBLE || playerStateController.state == PlayerStateController.BUBBLE) {
+                if (moveInput.x == 1) {
                     player.transform.Rotate(0f, 0f, -10f, Space.Self);
-                }
-            } else if (moveInput.x == -1) {
-                if (playerStateController.state == PlayerStateController.MARBLE) {
+                } else if (moveInput.x == -1) {
                     player.transform.Rotate(0f, 0f, 10f, Space.Self);
                 }
             }

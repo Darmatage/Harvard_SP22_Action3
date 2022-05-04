@@ -1,10 +1,8 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class WaterColliderController : MonoBehaviour
-{
+public class ShearsController : MonoBehaviour {
     GameObject player;
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -12,10 +10,8 @@ public class WaterColliderController : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
         if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
-			if (player.GetComponent<PlayerStateController>().state == PlayerStateController.MALLEABLE) {
-				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-				// Sprite s = player.GetComponent<Sprite>();
-				// Destroy(s);
+			if (player.GetComponent<PlayerStateController>().state == PlayerStateController.BUBBLE) {
+                player.GetComponent<PlayerMarbleScaleController>().setNotBubble();
 			}
 		}
 	}
