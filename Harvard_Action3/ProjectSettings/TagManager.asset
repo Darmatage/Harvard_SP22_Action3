@@ -12,6 +12,7 @@ TagManager:
   - ParticleContainer
   - WildParticle
   - SolidContainer
+  - Shears
   layers:
   - Default
   - TransparentFX
