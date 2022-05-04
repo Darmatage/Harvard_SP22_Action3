@@ -26,6 +26,8 @@ public class LogoPlay : MonoBehaviour
       primeInt = primeInt +1;
       if (primeInt == 1){
         GameObject LetterG;
+        ParticleSystem ps = GetComponent<ParticleSystem>();
+        ps.Play();
         Debug.Log("Letter G");
       }
       else if (primeInt == 2){
