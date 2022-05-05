@@ -17,6 +17,8 @@ namespace Game.Movement
         private GameObject player;
         private PlayerStateController playerStateController;
 
+        private bool isPlayerDead = false;
+
         private Rigidbody2D playerRigidbody;
         public Rigidbody2D GetPlayerRigidbody() { return playerRigidbody; }
         private Vector2 moveInput;
@@ -37,11 +39,13 @@ namespace Game.Movement
         private void OnEnable()
         {
             EventHandler.StateChangeActionEvent += ChangeState;
+            EventHandler.PlayerDeathEvent += PlayerDeath;
         }
 
         private void OnDisable()
         {
             EventHandler.StateChangeActionEvent -= ChangeState;
+            EventHandler.PlayerDeathEvent -= PlayerDeath;
         }
 
         void Start() 
@@ -65,11 +69,13 @@ namespace Game.Movement
 
         public void Move(InputAction.CallbackContext value)
         {
+            if(isPlayerDead) return;
             moveInput = value.ReadValue<Vector2>();
         }
 
         public void Climb(InputAction.CallbackContext value) 
         {
+            if(isPlayerDead) return;
             if(value.started)
             {
                 EventHandler.CallClimbActionEvent();
@@ -113,6 +119,11 @@ namespace Game.Movement
         //     //   RollSFX.Stop();
         //     // }
         // }
+
+        private void PlayerDeath()
+        {
+            isPlayerDead = true;
+        }
 
         private void ChangeState()
         {

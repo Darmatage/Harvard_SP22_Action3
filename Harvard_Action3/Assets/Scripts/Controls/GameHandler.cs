@@ -70,7 +70,8 @@ public class GameHandler : MonoBehaviour {
 
       public void playerDies(){
             player.GetComponent<PlayerHurt>().playerDead();
-            StartCoroutine(DeathPause());
+            Debug.Log("You are dead!");
+            //StartCoroutine(DeathPause());
       }
 
       IEnumerator DeathPause(){

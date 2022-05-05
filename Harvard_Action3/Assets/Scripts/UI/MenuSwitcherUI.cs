@@ -22,14 +22,16 @@ namespace Game.UI
         }
 
         public void StartGame() {
-            Debug.Log("Start Game?");
             SceneManager.LoadScene("Scene_1_Level1");
+        }
+
+        public void RestartLevel() {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void ExitGameButtonUI()
         {
-            //savingWrapper.value.ExitGame(0, 0.5f);
-            Debug.Log("Exit Game");
+            SceneManager.LoadScene("Scene_0_MainMenu");
         }
 
 

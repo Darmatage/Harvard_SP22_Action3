@@ -9,6 +9,8 @@ public class PlayerMarbleScaleController : MonoBehaviour
     private PlayerStateController playerStateController;
     private Rigidbody2D rigidBody;
 
+    private bool isPlayerDead = false;
+
     public int particleTriggerCount = 0;
 
     private bool isGrowing = false;
@@ -43,10 +45,21 @@ public class PlayerMarbleScaleController : MonoBehaviour
         scaleChange = new Vector3(1f, 1f, 1f);
     }
 
-    void FixedUpdate() {
-        if (temperatureManager.Heat == 0) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    private void Update() 
+    {
+        if (temperatureManager.Heat == 0) 
+        {
+            if(!isPlayerDead)
+            {
+                isPlayerDead = true;
+                EventHandler.CallPlayerDeathEvent();
+            }
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        
+    }
+
+    void FixedUpdate() {
 
         switch (playerStateController.state) {
             case PlayerStateController.MARBLE:

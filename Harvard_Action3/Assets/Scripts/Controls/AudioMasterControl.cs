@@ -11,9 +11,11 @@ namespace Game.Control
             [SerializeField] AudioMixer mixer;
             [SerializeField] Slider sliderVolumeCtrl;
 
+            public static float volumeLevel = 0.2f;
+
             private void Awake ()
             {
-                //SetLevel(GetVolumeLevel());
+                SetLevel(volumeLevel);
             }
 
             public void SetLevel(float sliderValue)
