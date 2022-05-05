@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1958105915153504856}
   - component: {fileID: 1958105915153504859}
   - component: {fileID: 8474962208031607034}
+  - component: {fileID: 6897013227408501118}
   m_Layer: 0
   m_Name: CoreParticle
   m_TagString: Untagged
@@ -163,7 +164,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.005
+  m_Distance: 0.4
   m_DampingRatio: 0
   m_Frequency: 1
 --- !u!235 &1958105915153504856
@@ -214,3 +215,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d862610ba6944e2b81b10fd16d9b73f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!247 &6897013227408501118
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958105915153504846}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0

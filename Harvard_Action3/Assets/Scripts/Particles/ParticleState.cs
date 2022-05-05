@@ -6,35 +6,54 @@ namespace Game.Particles
     {
         private bool isSolidStat = false;
         private DistanceJoint2D particleDistantJoint;
+        private SpringJoint2D particleSpringJoint;
+        private WheelJoint2D particleWheelJoint;
+        private Rigidbody2D particleRB;
         private Rigidbody2D particlesContainerRB;
+        private ConstantForce2D particlesConstantForce;
 
         private void Awake() 
         {
             particleDistantJoint = GetComponent<DistanceJoint2D>();
+            particleSpringJoint = GetComponent<SpringJoint2D>();
+            particleWheelJoint = GetComponent<WheelJoint2D>();
+            particlesConstantForce = GetComponent<ConstantForce2D>();
+            particleRB = GetComponent<Rigidbody2D>();
+
             particlesContainerRB = GameObject.FindWithTag(Tags.PARTICLE_CONTAINER_TAG).GetComponent<Rigidbody2D>();
         }
 
         private void Start()
         {
-            GetComponent<DistanceJoint2D>().connectedBody = particlesContainerRB;
-            GetComponent<SpringJoint2D>().connectedBody = particlesContainerRB;
-            GetComponent<WheelJoint2D>().connectedBody = particlesContainerRB;
-            ChangeState();
+            particleDistantJoint.connectedBody = particlesContainerRB;
+            particleSpringJoint.connectedBody = particlesContainerRB;
+            particleWheelJoint.connectedBody = particlesContainerRB;
+            //ChangeState();
         }
 
-        // private void OnEnable()
-        // {
-        //     EventHandler.StateChangeActionEvent += ChangeState;
-        // }
+        private void OnEnable()
+        {
+            EventHandler.ParticleBreakEvent += BreakJoints;
+        }
 
-        // private void OnDisable()
-        // {
-        //     EventHandler.StateChangeActionEvent -= ChangeState;
-        // }
+        private void OnDisable()
+        {
+            EventHandler.ParticleBreakEvent -= BreakJoints;
+        }
+
+        private void BreakJoints()
+        {
+            particleRB.gravityScale = 2f;
+            particleDistantJoint.enabled = false;
+            particleSpringJoint.enabled = false;
+            particleWheelJoint.enabled = false;
+            particlesConstantForce.force = new Vector2 (25f, 0f);
+
+        }
 
         private void ChangeState()
         {
-            //Debug.Log("State Change");
+            Debug.Log("State Change");
             particleDistantJoint = GetComponent<DistanceJoint2D>();
             if (isSolidStat)
             {
