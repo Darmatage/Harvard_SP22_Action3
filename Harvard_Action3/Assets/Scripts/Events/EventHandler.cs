@@ -74,4 +74,24 @@ public class EventHandler
             AddParticleEvent();
         }
     }
+
+    // Player Death Event
+    public static event Action PlayerDeathEvent;
+    public static void CallPlayerDeathEvent()
+    {
+        if (PlayerDeathEvent != null)
+        {
+            PlayerDeathEvent();
+        }
+    }
+
+    // Particle Break Event
+    public static event Action ParticleBreakEvent;
+    public static void CallParticleBreakEvent()
+    {
+        if (ParticleBreakEvent != null)
+        {
+            ParticleBreakEvent();
+        }
+    }
 }
