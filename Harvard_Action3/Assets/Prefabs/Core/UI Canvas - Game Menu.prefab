@@ -1379,6 +1379,7 @@ GameObject:
   - component: {fileID: 6379764067973226127}
   - component: {fileID: 1905588659984378666}
   - component: {fileID: 1222594047719393960}
+  - component: {fileID: 123584855958523191}
   m_Layer: 5
   m_Name: UI Canvas - Game Menu
   m_TagString: Untagged
@@ -1481,6 +1482,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPauseContainer: {fileID: 3119390491125859382}
+--- !u!114 &123584855958523191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373125096709188336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6a40f5c128b564f808567c1285a0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 4477fbd66ed14490e87ed46777063265, type: 2}
+  sliderVolumeCtrl: {fileID: 4557747591586415793}
 --- !u!1 &4711982866458056892
 GameObject:
   m_ObjectHideFlags: 0
