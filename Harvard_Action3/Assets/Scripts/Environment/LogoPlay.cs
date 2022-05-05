@@ -30,11 +30,15 @@ public class LogoPlay : MonoBehaviour
         GameObject LetterG;
         ParticleSystem ps = GetComponent<ParticleSystem>();
         ps.Play();
+        Debug.Log(ps.isEmitting);
+        //def needs to be ps.isEmitting - see documentation
+        //To Do - need to assign PathFollower endOfPathInstruction to ps.endOfPathInstruction
+  //      ps.endOfPathInstruction =
         // particlePlaying = true;
         // ps.(Stop);
         // particlePlaying = false;
         Debug.Log("Letter G");
-        if (isEmitting == false){
+        if (ps.isEmitting == false){
                 primeInt = primeInt +1;
                 Debug.Log("int update");
         }
