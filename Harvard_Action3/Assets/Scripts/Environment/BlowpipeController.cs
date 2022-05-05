@@ -20,7 +20,12 @@ public class BlowpipeController : MonoBehaviour
                 blowpipeSound.Play();
 
                 player = GameObject.FindWithTag("Player");
-                player.GetComponent<PlayerMarbleScaleController>().setBubble();
+
+                if (player.GetComponent<PlayerStateController>().state == PlayerStateController.MALLEABLE) {
+                    player.GetComponent<PlayerMarbleScaleController>().setBubble();
+                } else if (player.GetComponent<PlayerStateController>().state == PlayerStateController.BUBBLE) {
+                    player.GetComponent<PlayerStateController>().setState(PlayerStateController.BUBBLE_FLOATING);
+                }
             }
             player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount++;
         }
@@ -32,9 +37,6 @@ public class BlowpipeController : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
             player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount--;
-            // if (player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount == 0) {
-            //     player.gameObject.GetComponent<PlayerMarbleScaleController>().setNotBubble();
-            // }
         }
     }
 }

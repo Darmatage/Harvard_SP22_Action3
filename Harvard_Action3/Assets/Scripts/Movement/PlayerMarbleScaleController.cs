@@ -14,11 +14,9 @@ public class PlayerMarbleScaleController : MonoBehaviour
     public int particleTriggerCount = 0;
 
     private bool isGrowing = false;
-    private bool isShrinking = false;
     private Vector3 scaleChange;
     private Vector2 upForce;
 
-    float minSize = 1f;
     float maxSize = 3f;
     float scale = 1f;
     float scaleRate = 1f;
@@ -140,13 +138,11 @@ public class PlayerMarbleScaleController : MonoBehaviour
     // @TODO manage the various player states via a proper state machine
     public void setBubble() {
         isGrowing = true;
-        isShrinking = false;
         isLighterThanAir = true;
     }
 
     public void setNotBubble() {
         isGrowing = false;
-        isShrinking = true;
         isLighterThanAir = false;
     }
 
@@ -165,5 +161,4 @@ public class PlayerMarbleScaleController : MonoBehaviour
     public int getHeatLevel() {
         return temperatureManager.Heat;
     }
-
 }
