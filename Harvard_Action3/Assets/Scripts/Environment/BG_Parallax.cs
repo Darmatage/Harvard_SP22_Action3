@@ -1,28 +1,27 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class BG_Parallax : MonoBehaviour {
 
+      private GameObject camera;
       private float length, startposX;
-      //startposY;
-      public GameObject cam;
       public float parallaxEffect;
-      //parallaxUpEffect;
 
     
       void Start(){
+            camera = GameObject.FindWithTag("PlayerCamera");
             startposX = transform.position.x;
-            //startposY = transform.position.y;
-            length = GetComponent<SpriteRenderer>().bounds.size.x;
+            length = GetComponent<TilemapRenderer>().bounds.size.x;
+            // length = GetComponent<SpriteRenderer>().bounds.size.x;
       }
 
       void FixedUpdate(){
-            float temp = (cam.transform.position.x * (1 - parallaxEffect));
-            float distX = (cam.transform.position.x * parallaxEffect);
-            //float distY = (cam.transform.position.y * parallaxUpEffect);
+            float temp = (camera.transform.position.x * (1 - parallaxEffect));
+            float distX = (camera.transform.position.x * parallaxEffect);
             transform.position = new Vector3(startposX + distX, transform.position.y, transform.position.z);
-            //transform.position = new Vector3(startposX + distX, startposY + distY, 1);
+
             if (temp > startposX + length){
                   startposX += length;
             }

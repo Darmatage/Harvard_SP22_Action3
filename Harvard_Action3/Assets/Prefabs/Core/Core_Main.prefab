@@ -102,6 +102,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7674621542201129512}
     m_Modifications:
+    - target: {fileID: 7366982701447520089, guid: c156003378f4c43cfba58c903ae7abc1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366982701447520089, guid: c156003378f4c43cfba58c903ae7abc1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.81
+      objectReference: {fileID: 0}
     - target: {fileID: 7366982701491426245, guid: c156003378f4c43cfba58c903ae7abc1, type: 3}
       propertyPath: m_ChildCameras.Array.size
       value: 1
@@ -116,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 7674621541130926991}
     - target: {fileID: 7366982701527828146, guid: c156003378f4c43cfba58c903ae7abc1, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7785978
+      value: 1.7777778
       objectReference: {fileID: 0}
     - target: {fileID: 7366982702101046722, guid: c156003378f4c43cfba58c903ae7abc1, type: 3}
       propertyPath: m_Name
@@ -227,6 +235,14 @@ PrefabInstance:
     - target: {fileID: 866706931147153481, guid: d1639496211c04162a4e1ca80bf1f81d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 866706931984703220, guid: d1639496211c04162a4e1ca80bf1f81d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 866706931984703220, guid: d1639496211c04162a4e1ca80bf1f81d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1639496211c04162a4e1ca80bf1f81d, type: 3}

@@ -55,7 +55,6 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 isPlayerDead = true;
                 EventHandler.CallPlayerDeathEvent();
             }
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
     }
