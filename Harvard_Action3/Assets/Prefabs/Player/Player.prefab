@@ -245,7 +245,6 @@ MonoBehaviour:
   solidContainer: {fileID: 7302636112344575585}
   particleContainer: {fileID: 6920334608375312481}
   playerTransform: {fileID: 866706931147153481}
-  playerDeathParticleSystemTransform: {fileID: 3880376899617436699}
   playerDeathParticleSystem: {fileID: 7601060976568188511}
 --- !u!114 &1011809998803997142
 MonoBehaviour:
@@ -261,6 +260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleTriggerCount: 0
   thrust: 15
+  heatingRate: 5
+  coolingRate: 40
 --- !u!114 &6243783648597910898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +463,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.51413214, b: 0.2688679, a: 1}
   m_FlipX: 0
@@ -640,7 +641,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!232 &631697846590660667
 DistanceJoint2D:
@@ -1392,14 +1393,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deaaabdfa8b5b426d9d60dba60ae7348, type: 3}
---- !u!198 &7601060976568188511 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1733554684152489471, guid: deaaabdfa8b5b426d9d60dba60ae7348, type: 3}
-  m_PrefabInstance: {fileID: 8174796811223014304}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3880376899617436699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4948163344434835387, guid: deaaabdfa8b5b426d9d60dba60ae7348, type: 3}
+  m_PrefabInstance: {fileID: 8174796811223014304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7601060976568188511 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1733554684152489471, guid: deaaabdfa8b5b426d9d60dba60ae7348, type: 3}
   m_PrefabInstance: {fileID: 8174796811223014304}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8873605695065977322
