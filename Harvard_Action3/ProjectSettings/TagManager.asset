@@ -13,6 +13,8 @@ TagManager:
   - WildParticle
   - SolidContainer
   - Shears
+  - VolumePersists
+  - LevelMusic
   layers:
   - Default
   - TransparentFX
