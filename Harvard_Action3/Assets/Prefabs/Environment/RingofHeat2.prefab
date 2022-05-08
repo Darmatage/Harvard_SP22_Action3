@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5622750365628687381}
   m_Layer: 0
   m_Name: RingofHeat2
-  m_TagString: Untagged
+  m_TagString: HeatRing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
