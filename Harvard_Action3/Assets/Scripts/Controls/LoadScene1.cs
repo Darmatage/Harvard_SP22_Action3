@@ -68,7 +68,6 @@ public void talking(){         // main story function. Players hit next to progr
       else if (primeInt == 7){
                 IntroText.text = "Learn what it means to be glass, explore the studio, and pick up beautiful offerings of color on your way to reach the Dragon! ";
                 GoalText.text = "";
-                primeInt = primeInt + 1;
       }
       else if (primeInt == 8){
                 skipIntroButton.SetActive(false);
@@ -79,9 +78,17 @@ public void talking(){         // main story function. Players hit next to progr
       }
 
 }
-  public void SkipIntroFunct(){
-    primeInt = 7;
-  }
+    public void SkipIntroFunct(){
+        TextDisplay.SetActive(true);
+        skipIntroButton.SetActive(false);
+        NextScene1Button.SetActive(true);
+        nextButton.SetActive(false);
+        IntroText.text = "";
+        GoalText.text = "Level 1: Hot, glass melts, drips, becomes malleable. When it cools it hardens into a marble, which rolls and jumps. But if hot glass gets too cold, it shatters! ";
+      }
+    public void SceneChange1(){
+       SceneManager.LoadScene("Scene_1_Level1");
+      }
 }
 
 // Using Jason's code exactly as suggested - doesn't seem to work either?
