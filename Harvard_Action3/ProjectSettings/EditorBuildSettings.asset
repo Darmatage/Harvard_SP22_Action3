@@ -23,5 +23,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: b2e36e5dc5c464b08bccb5cf2e4c3197
+  - enabled: 1
+    path: Assets/Scenes/LoadScene1.unity
+    guid: d162be8e2a4b248b4b2c537f68474774
+  - enabled: 1
+    path: Assets/Scenes/LoadScene2.unity
+    guid: 2c3f50bd631714967a4595b159c9fff9
+  - enabled: 1
+    path: Assets/Scenes/LoadScene3.unity
+    guid: 740d3101d11014e84bffbc159762b3a2
+  - enabled: 1
+    path: Assets/Scenes/LoadScene4.unity
+    guid: 95d8bacc6232049b685f96bb6655168b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 93bbcbfb25fc6469a8bc10c98e8c884e, type: 2}
