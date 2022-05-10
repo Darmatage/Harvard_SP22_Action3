@@ -50,11 +50,11 @@ namespace Game.Control
             additionalParticle.name = String.Format("AdditionalParticle_{0}", particleList.Count);
             particleList.Add(additionalParticle);
 
-            foreach (var item in particleList)
-            {
-                Debug.Log(item);
+            // foreach (var item in particleList)
+            // {
+            //     Debug.Log(item);
                 
-            }
+            // }
         }
 
     }
