@@ -7,7 +7,7 @@ namespace Game.UI
     {
         [SerializeField] GameObject entryPoint;
 
-        private void Start() 
+        private void Start()
         {
             SwitchTo(entryPoint);
         }
@@ -22,7 +22,7 @@ namespace Game.UI
         }
 
         public void StartGame() {
-            SceneManager.LoadScene("Scene_1_Level1");
+            SceneManager.LoadScene("LoadScene1");
         }
 
         public void RestartLevel() {
