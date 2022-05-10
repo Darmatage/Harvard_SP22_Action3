@@ -31,6 +31,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
     // cooling off
     private int heatingTimer = 0;
     private int coolingTimer = 0;
+    private int floatingTimer = 0;
 
     void Start() {
         if (GameObject.FindWithTag("GameHandler") != null){
@@ -69,6 +70,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
                     EventHandler.CallStateChangeActionEvent();
                 }
 
+                scale = 1;
                 scaleChange.x = 1;
                 scaleChange.y = 1;
 
@@ -92,13 +94,16 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 } 
                 
                 if (isFloating) {
+                    floatingTimer++;
                     int deltaT = playerStateController.bubbleStartHeat - temperatureManager.Heat;
                     // Debug.Log("Bubble Start Heat = " + playerStateController.bubbleStartHeat);
                     // Debug.Log("deltaT = " + deltaT);
    
                     rigidBody.gravityScale = -1;
-                    if (deltaT > PlayerStateController.BUBBLE_FLOATING_TEMP_RANGE) {
+                    // if (deltaT > PlayerStateController.BUBBLE_FLOATING_TEMP_RANGE) {
+                    if (floatingTimer % 150 == 0) {
                         isFloating = false;
+                        floatingTimer = 0;
                     }
                 } else {
                     rigidBody.gravityScale = 1;
