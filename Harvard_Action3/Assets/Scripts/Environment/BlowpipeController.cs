@@ -15,15 +15,14 @@ public class BlowpipeController : MonoBehaviour
         string parentTag = other.transform.parent.gameObject.tag;
         player = GameObject.FindWithTag("Player");
 
+Debug.Log("COLLIDE! " + player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount);
         if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
             if (player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount == 0) {
                 blowpipeSound.Play();
 
                 player = GameObject.FindWithTag("Player");
-
-                if (player.GetComponent<PlayerStateController>().state == PlayerStateController.MALLEABLE) {
-                    player.GetComponent<PlayerMarbleScaleController>().setBubble();
-                }
+                Debug.Log("SET BUBBLE!");
+                player.GetComponent<PlayerMarbleScaleController>().setBubble();
             }
             player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount++;
         }
@@ -32,9 +31,10 @@ public class BlowpipeController : MonoBehaviour
     void OnTriggerExit2D(Collider2D other) {
         string parentTag = other.transform.parent.gameObject.tag;
 
+Debug.Log("EXIT! " + player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount);
         player = GameObject.FindWithTag("Player");
-        if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
+        // if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
             player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount--;
-        }
+        // }
     }
 }
