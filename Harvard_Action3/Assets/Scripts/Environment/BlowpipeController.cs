@@ -23,8 +23,6 @@ public class BlowpipeController : MonoBehaviour
 
                 if (player.GetComponent<PlayerStateController>().state == PlayerStateController.MALLEABLE) {
                     player.GetComponent<PlayerMarbleScaleController>().setBubble();
-                } else if (player.GetComponent<PlayerStateController>().state == PlayerStateController.BUBBLE) {
-                    player.GetComponent<PlayerStateController>().setState(PlayerStateController.BUBBLE_FLOATING);
                 }
             }
             player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount++;

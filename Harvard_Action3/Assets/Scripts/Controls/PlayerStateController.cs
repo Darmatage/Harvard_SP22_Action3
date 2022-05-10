@@ -8,7 +8,7 @@ public class PlayerStateController : MonoBehaviour
     public const int MALLEABLE = 1;
     public const int BUBBLE = 2;
     public const int BUBBLE_FLOATING = 3;
-    public const int BUBBLE_FLOATING_TEMP_RANGE = 3;
+    public const int BUBBLE_FLOATING_TEMP_RANGE = 10;
 
     public int bubbleStartHeat;
 

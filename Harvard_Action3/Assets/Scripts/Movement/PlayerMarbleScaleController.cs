@@ -89,27 +89,64 @@ public class PlayerMarbleScaleController : MonoBehaviour
                     scaleChange.y = scale;
 
                     if (scale == maxSize) {
-                        playerStateController.bubbleStartHeat = temperatureManager.Heat;
                         isGrowing = false;
-                        playerStateController.setState(PlayerStateController.BUBBLE_FLOATING);
                     }
-                }
-
-                if (player.transform.localScale != scaleChange) {
-                    player.transform.localScale = scaleChange;
-                }
-
-                break;
-            case PlayerStateController.BUBBLE_FLOATING:
-                    int deltaT = playerStateController.bubbleStartHeat - temperatureManager.Heat;
-
-                    if (deltaT < PlayerStateController.BUBBLE_FLOATING_TEMP_RANGE) {
+                } else {
+                    Debug.Log("Bubble Start Heat = " + playerStateController.bubbleStartHeat);
+                    Debug.Log("deltaT = " + (playerStateController.bubbleStartHeat - temperatureManager.Heat));
+                    if ((playerStateController.bubbleStartHeat - temperatureManager.Heat) < PlayerStateController.BUBBLE_FLOATING_TEMP_RANGE) {
                         rigidBody.gravityScale = -1;
                     } else {
                         rigidBody.gravityScale = 1;
-                        playerStateController.setState(PlayerStateController.BUBBLE);
                     }
-                break;
+                }
+            // case PlayerStateController.MARBLE:
+            //     if (temperatureManager.Heat > TemperatureManager.MARBLE_MAX_HEAT) {
+            //         playerStateController.setState(PlayerStateController.MALLEABLE);
+            //         EventHandler.CallStateChangeActionEvent();
+            //     }
+            //     break;
+            // case PlayerStateController.MALLEABLE:
+            //     if (temperatureManager.Heat < TemperatureManager.MALLEABLE_STATE_MIN_HEAT) {
+            //         playerStateController.setState(PlayerStateController.MARBLE);
+            //         EventHandler.CallStateChangeActionEvent();
+            //     }
+
+            //     if (isLighterThanAir) {
+            //         EventHandler.CallStateChangeActionEvent();
+            //         playerStateController.setState(PlayerStateController.BUBBLE);
+            //         playerStateController.bubbleStartHeat = temperatureManager.Heat;
+            //         isLighterThanAir = false;
+            //         isGrowing = true;
+            //     }
+            //     break;
+            // case PlayerStateController.BUBBLE:
+            //     if (scale < maxSize) {
+            //         scale = Mathf.Min(scale + scaleRate * Time.fixedDeltaTime, maxSize);
+            //         scaleChange.x = scale;
+            //         scaleChange.y = scale;
+            //     } else {
+            //         playerStateController.bubbleStartHeat = temperatureManager.Heat;
+            //         isGrowing = false;
+            //         playerStateController.setState(PlayerStateController.BUBBLE_FLOATING);
+            //     }
+
+            //     if (player.transform.localScale != scaleChange) {
+            //         player.transform.localScale = scaleChange;
+            //     }
+
+            //     break;
+            // case PlayerStateController.BUBBLE_FLOATING:
+            //         int deltaT = playerStateController.bubbleStartHeat - temperatureManager.Heat;
+            //         Debug.Log("BubbleFloating: deltaT = " + deltaT);
+
+            //         if (deltaT < PlayerStateController.BUBBLE_FLOATING_TEMP_RANGE) {
+            //             rigidBody.gravityScale = -1;
+            //         } else {
+            //             rigidBody.gravityScale = 1;
+            //             // playerStateController.setState(PlayerStateController.BUBBLE);
+            //         }
+            //     break;
             default:
                 break;
         }
