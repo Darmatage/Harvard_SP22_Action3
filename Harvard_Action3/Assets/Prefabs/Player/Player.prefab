@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6243783648597910898}
   - component: {fileID: 854824995914855142}
   - component: {fileID: 6187026916144595983}
+  - component: {fileID: 3906172008557907755}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -392,6 +393,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleStartHeat: 0
   state: 0
+--- !u!210 &3906172008557907755
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866706931147153480}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 45
 --- !u!1 &866706931984703222
 GameObject:
   m_ObjectHideFlags: 0

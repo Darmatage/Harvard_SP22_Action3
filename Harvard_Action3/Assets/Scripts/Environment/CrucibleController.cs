@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CrucibleController : MonoBehaviour
 {
+    [SerializeField] bool doubleSize = false;
     GameObject player;
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -15,6 +16,10 @@ public class CrucibleController : MonoBehaviour
                 player.GetComponent<PlayerMarbleScaleController>().setGrowSolid(true);
             }
             player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount++;
+            if(doubleSize)
+            {
+                EventHandler.CallDoubleSizeEvent();
+            }
         }
     }
 

@@ -65,6 +65,26 @@ public class EventHandler
         }
     }
 
+    // Double Size Event
+    public static event Action DoubleSizeEvent;
+    public static void CallDoubleSizeEvent()
+    {
+        if (DoubleSizeEvent != null)
+        {
+            DoubleSizeEvent();
+        }
+    }
+
+    // Half Size Event
+    public static event Action HalfSizeEvent;
+    public static void CallHalfSizeEvent()
+    {
+        if (HalfSizeEvent != null)
+        {
+            HalfSizeEvent();
+        }
+    }
+
     // Add Particle Event
     public static event Action AddParticleEvent;
     public static void CallAddParticleEvent()

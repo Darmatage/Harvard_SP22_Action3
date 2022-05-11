@@ -13,14 +13,20 @@ namespace Game.Control
 
         private List<GameObject> particleList;
 
+        private bool isDoubled = false;
+
         private void OnEnable()
         {
             EventHandler.AddParticleEvent += AddNewParticle;
+            EventHandler.DoubleSizeEvent += DoubleParticle;
+            EventHandler.HalfSizeEvent += HalfParticle;
         }
 
         private void OnDisable()
         {
             EventHandler.AddParticleEvent -= AddNewParticle;
+            EventHandler.DoubleSizeEvent -= DoubleParticle;
+            EventHandler.HalfSizeEvent -= HalfParticle;
         }
 
         private void Start()
@@ -50,10 +56,42 @@ namespace Game.Control
             additionalParticle.name = String.Format("AdditionalParticle_{0}", particleList.Count);
             particleList.Add(additionalParticle);
 
-            foreach (var item in particleList)
+            // foreach (var item in particleList)
+            // {
+            //     Debug.Log(item);
+            // }
+        }
+
+        private void DoubleParticle()
+        {
+            if(!isDoubled)
             {
-                Debug.Log(item);
-                
+                for (int i = 0; i < startingCoreParticles; i++) 
+                {
+                    var additionalParticle = Instantiate(AdditionalParticlePrefab, transform);
+                    additionalParticle.name = String.Format("AdditionalParticle_{0}", particleList.Count);
+                    particleList.Add(additionalParticle);
+                }
+                isDoubled = true;
+            }
+        }
+
+        private void HalfParticle()
+        {
+            if(isDoubled)
+            {
+                for (int i = 0; i < startingCoreParticles; i++) 
+                {
+                    //Debug.Log(particleList.Count);
+                    var lastParticle = GameObject.Find(particleList[particleList.Count - 1].name);
+                    Debug.Log(lastParticle);
+                    if(lastParticle)
+                    {
+                        Destroy(lastParticle);
+                        particleList.RemoveAt(particleList.Count - 1);
+                    }
+                }
+                isDoubled = false;
             }
         }
 
