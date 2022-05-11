@@ -45,7 +45,22 @@ public class PlayerMarbleScaleController : MonoBehaviour
         scaleChange = new Vector3(1f, 1f, 1f);
     }
 
-    private void Update() {
+    void FixedUpdate() {
+        if (temperatureManager.isHeatingUp) {
+            heatingTimer += 1;
+            if (temperatureManager.Heat < 100 && heatingTimer % 3 == 0) {
+                temperatureManager.adjustHeat(heatRate);
+                heatingTimer = 0;
+            }
+        } else {
+            coolingTimer += 1;
+
+            if (temperatureManager.Heat > 0 && coolingTimer % 12 == 0) {
+                temperatureManager.adjustHeat(-heatRate);
+                coolingTimer = 0;
+            }
+        }
+
         if (temperatureManager.Heat == 0) 
         {
             if(!isPlayerDead)
@@ -54,17 +69,19 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 EventHandler.CallPlayerDeathEvent();
             }
         }
-    }
 
-    void FixedUpdate() {
         switch (playerStateController.state) {
             case PlayerStateController.MARBLE:
+                rigidBody.gravityScale = 1;
+                isFloating = false;
                 if (temperatureManager.Heat > TemperatureManager.MARBLE_MAX_HEAT) {
                     playerStateController.setState(PlayerStateController.MALLEABLE);
                     EventHandler.CallStateChangeActionEvent();
                 }
                 break;
             case PlayerStateController.MALLEABLE:
+                rigidBody.gravityScale = 1;
+                isFloating = false;
                 if (temperatureManager.Heat < TemperatureManager.MALLEABLE_STATE_MIN_HEAT) {
                     playerStateController.setState(PlayerStateController.MARBLE);
                     EventHandler.CallStateChangeActionEvent();
@@ -94,13 +111,11 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 } 
                 
                 if (isFloating) {
+                    temperatureManager.isHeatingUp = false;
                     floatingTimer++;
                     int deltaT = playerStateController.bubbleStartHeat - temperatureManager.Heat;
-                    // Debug.Log("Bubble Start Heat = " + playerStateController.bubbleStartHeat);
-                    // Debug.Log("deltaT = " + deltaT);
    
                     rigidBody.gravityScale = -1;
-                    // if (deltaT > PlayerStateController.BUBBLE_FLOATING_TEMP_RANGE) {
                     if (floatingTimer % 150 == 0) {
                         isFloating = false;
                         floatingTimer = 0;
@@ -117,20 +132,6 @@ public class PlayerMarbleScaleController : MonoBehaviour
             player.transform.localScale = scaleChange;
         }
 
-        if (temperatureManager.isHeatingUp) {
-            heatingTimer += 1;
-            if (temperatureManager.Heat < 100 && heatingTimer % 3 == 0) {
-                temperatureManager.adjustHeat(heatRate);
-                heatingTimer = 0;
-            }
-        } else {
-            coolingTimer += 1;
-
-            if (temperatureManager.Heat > 0 && coolingTimer % 12 == 0) {
-                temperatureManager.adjustHeat(-heatRate);
-                coolingTimer = 0;
-            }
-        }
 
         gameHandler.updateStatsDisplay();
     }

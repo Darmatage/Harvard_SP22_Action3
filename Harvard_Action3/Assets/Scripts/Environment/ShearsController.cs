@@ -18,7 +18,7 @@ public class ShearsController : MonoBehaviour {
                 case PlayerStateController.BUBBLE:
                     player.GetComponent<PlayerMarbleScaleController>().setNotBubble();
                     break;
-                    case PlayerStateController.MALLEABLE:
+                case PlayerStateController.MALLEABLE:
                     EventHandler.CallHalfSizeEvent();
                     break;
                 default:
