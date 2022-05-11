@@ -13,12 +13,12 @@ public class ShearsController : MonoBehaviour {
         if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
             switch (player.GetComponent<PlayerStateController>().state) {
                 case PlayerStateController.MARBLE:
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    EventHandler.CallPlayerDeathEvent();
                     break;
                 case PlayerStateController.BUBBLE:
                     player.GetComponent<PlayerMarbleScaleController>().setNotBubble();
                     break;
-                    case PlayerStateController.MALLEABLE:
+                case PlayerStateController.MALLEABLE:
                     EventHandler.CallHalfSizeEvent();
                     break;
                 default:

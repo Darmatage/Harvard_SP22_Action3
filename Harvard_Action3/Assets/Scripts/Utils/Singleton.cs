@@ -2,7 +2,10 @@ using UnityEngine;
 public class Singleton<T> : MonoBehaviour where T : Singleton<T> {
 
     static T instance;
-    public static T Instance { get { return instance; } }
+    public static T Instance { 
+        get { return instance; } 
+        set { }    
+    }
 
     protected virtual void Awake () {
         if (instance != null) {
