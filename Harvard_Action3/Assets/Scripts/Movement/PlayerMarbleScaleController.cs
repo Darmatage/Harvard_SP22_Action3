@@ -46,33 +46,10 @@ public class PlayerMarbleScaleController : MonoBehaviour
     }
 
     void FixedUpdate() {
-        if (temperatureManager.isHeatingUp) {
-            heatingTimer += 1;
-            if (temperatureManager.Heat < 100 && heatingTimer % 3 == 0) {
-                temperatureManager.adjustHeat(heatRate);
-                heatingTimer = 0;
-            }
-        } else {
-            coolingTimer += 1;
-
-            if (temperatureManager.Heat > 0 && coolingTimer % 12 == 0) {
-                temperatureManager.adjustHeat(-heatRate);
-                coolingTimer = 0;
-            }
-        }
-
-        if (temperatureManager.Heat == 0) 
-        {
-            if(!isPlayerDead)
-            {
-                isPlayerDead = true;
-                EventHandler.CallPlayerDeathEvent();
-            }
-        }
 
         switch (playerStateController.state) {
             case PlayerStateController.MARBLE:
-                rigidBody.gravityScale = 1;
+                rigidBody.gravityScale = 0;
                 isFloating = false;
                 if (temperatureManager.Heat > TemperatureManager.MARBLE_MAX_HEAT) {
                     playerStateController.setState(PlayerStateController.MALLEABLE);
@@ -80,7 +57,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 }
                 break;
             case PlayerStateController.MALLEABLE:
-                rigidBody.gravityScale = 1;
+                rigidBody.gravityScale = 0;
                 isFloating = false;
                 if (temperatureManager.Heat < TemperatureManager.MALLEABLE_STATE_MIN_HEAT) {
                     playerStateController.setState(PlayerStateController.MARBLE);
@@ -128,6 +105,29 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 break;
         }
 
+        if (temperatureManager.isHeatingUp) {
+            heatingTimer += 1;
+            if (temperatureManager.Heat < 100 && heatingTimer % 3 == 0) {
+                temperatureManager.adjustHeat(heatRate);
+                heatingTimer = 0;
+            }
+        } else {
+            coolingTimer += 1;
+
+            if (temperatureManager.Heat > 0 && coolingTimer % 25 == 0) {
+                temperatureManager.adjustHeat(-heatRate);
+                coolingTimer = 0;
+            }
+        }
+
+        if (temperatureManager.Heat == 0) 
+        {
+            if(!isPlayerDead)
+            {
+                isPlayerDead = true;
+                EventHandler.CallPlayerDeathEvent();
+            }
+        }
         if (player.transform.localScale != scaleChange) {
             player.transform.localScale = scaleChange;
         }
