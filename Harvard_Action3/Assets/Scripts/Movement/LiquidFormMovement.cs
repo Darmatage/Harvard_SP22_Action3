@@ -58,18 +58,7 @@ namespace Game.Movement
         {
             //if(!isAlive){ return; }
             if(!particleRigidbody.IsTouchingLayers(LayerMask.GetMask("ClimbSurface"))) return;
-
-            if(lookDirection == Vector2.right)
-            {
-                //Debug.Log("Jump Right");
-                particleRigidbody.velocity += new Vector2 (0f, climbLift);
-            }
-
-            if(lookDirection == Vector2.left)
-            {
-                //Debug.Log("Jump Left");
-                particleRigidbody.velocity += new Vector2 (0f, climbLift);
-            }
+            particleRigidbody.velocity += new Vector2 (0f, climbLift);
         }
 
     }
