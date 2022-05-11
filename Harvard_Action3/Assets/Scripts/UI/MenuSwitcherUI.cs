@@ -21,8 +21,14 @@ namespace Game.UI
             }
         }
 
-        public void StartGame() {
+        public void StartGame() 
+        {
             SceneManager.LoadScene("LoadScene1");
+        }
+
+        public void FinishGame()
+        {
+            SceneManager.LoadScene("Scene_0_MainMenu");
         }
 
         public void RestartLevel() {
