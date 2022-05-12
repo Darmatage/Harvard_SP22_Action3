@@ -114,4 +114,14 @@ public class EventHandler
             ParticleBreakEvent();
         }
     }
+
+    // Turn into Bubble Event
+    public static event Action<bool> BubbleStateEvent;
+    public static void CallBubbleStateEvent(bool isBubbleState)
+    {
+        if (BubbleStateEvent != null)
+        {
+            BubbleStateEvent(isBubbleState);
+        }
+    }
 }

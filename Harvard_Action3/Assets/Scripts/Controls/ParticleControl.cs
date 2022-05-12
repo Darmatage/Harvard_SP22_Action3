@@ -15,17 +15,19 @@ namespace Game.Control
 
         private bool isDoubled = false;
 
+        private bool activateDouble = false;
+
         private void OnEnable()
         {
             EventHandler.AddParticleEvent += AddNewParticle;
-            EventHandler.DoubleSizeEvent += DoubleParticle;
+            EventHandler.DoubleSizeEvent += ActivateDoubleEvent;
             EventHandler.HalfSizeEvent += HalfParticle;
         }
 
         private void OnDisable()
         {
             EventHandler.AddParticleEvent -= AddNewParticle;
-            EventHandler.DoubleSizeEvent -= DoubleParticle;
+            EventHandler.DoubleSizeEvent -= ActivateDoubleEvent;
             EventHandler.HalfSizeEvent -= HalfParticle;
         }
 
@@ -33,6 +35,16 @@ namespace Game.Control
         {
             particleList = new List<GameObject>();
             CoreParticleSetup();
+        }
+
+        public bool GetIsDouble()
+        {
+            return isDoubled;
+        }
+
+        public void SetIsDouble(bool state)
+        {
+            isDoubled = state;
         }
 
         private void CoreParticleSetup()
@@ -60,6 +72,23 @@ namespace Game.Control
             // {
             //     Debug.Log(item);
             // }
+        }
+
+        private void ActivateDoubleEvent()
+        {
+            if(!activateDouble)
+            {
+                activateDouble = true;
+                StartCoroutine(ExampleCoroutine());
+                
+            }
+
+        }
+
+        private IEnumerator ExampleCoroutine()
+        {
+            yield return new WaitForSeconds(0.5f);
+            DoubleParticle();
         }
 
         private void DoubleParticle()
@@ -92,6 +121,7 @@ namespace Game.Control
                     }
                 }
                 isDoubled = false;
+                activateDouble = false;
             }
         }
 
