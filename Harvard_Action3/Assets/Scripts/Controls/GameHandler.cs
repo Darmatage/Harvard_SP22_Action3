@@ -22,7 +22,8 @@ public class GameHandler : MonoBehaviour {
 
       private string sceneName;
 
-      void Start(){
+      void Start()
+      {
             player = GameObject.FindWithTag("Player");
             playerHeat = player.GetComponent<TemperatureManager>().Heat;
             temperatureManager = player.GetComponent<TemperatureManager>();
@@ -31,7 +32,15 @@ public class GameHandler : MonoBehaviour {
             //if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
                   playerHeat = StartPlayerHeat;
             //}
+
+            if(SceneManager.GetActiveScene().name == "Scene_1_Level1")
+            {
+                  gotTokens = 0;
+            }
+
             updateStatsDisplay();
+
+
       }
 
       public void playerGetTokens(int newTokens){
@@ -95,6 +104,11 @@ public class GameHandler : MonoBehaviour {
                 #else
                 Application.Quit();
                 #endif
+      }
+
+      public int GetTotalTokens()
+      {
+            return gotTokens;
       }
 
       // public void Credits() {

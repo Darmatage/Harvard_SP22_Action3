@@ -93,12 +93,15 @@ public class PlayerMarbleScaleController : MonoBehaviour
                     int deltaT = playerStateController.bubbleStartHeat - temperatureManager.Heat;
    
                     rigidBody.gravityScale = -1;
+                    EventHandler.CallBubbleStateEvent(true);
                     if (floatingTimer % 150 == 0) {
                         isFloating = false;
                         floatingTimer = 0;
+                        
                     }
                 } else {
                     rigidBody.gravityScale = 1;
+                    EventHandler.CallBubbleStateEvent(false);
                 }
                 break;
             default:

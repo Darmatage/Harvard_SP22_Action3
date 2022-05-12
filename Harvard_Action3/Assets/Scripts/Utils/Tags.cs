@@ -8,6 +8,8 @@ public static class Tags
     public const string VOLUME_STATE_PERSISTS_TAG = "VolumePersists";
     public const string LEVEL_MUSIC_TAG = "LevelMusic";
 
+    public const string GAME_HANDLER_TAG = "GameHandler";
+
     
 
 }

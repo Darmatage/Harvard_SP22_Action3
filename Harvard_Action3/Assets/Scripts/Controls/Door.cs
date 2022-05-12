@@ -23,7 +23,9 @@ public class Door : MonoBehaviour{
       public void OnTriggerEnter2D(Collider2D other){
             string parentTag = other.transform.parent.gameObject.tag;
             player = GameObject.FindWithTag("Player");
-            if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
+            if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") 
+            {
+                  EventHandler.CallLoadNextSceneEvent();
                   SceneManager.LoadScene (NextLevel);
             }
       }

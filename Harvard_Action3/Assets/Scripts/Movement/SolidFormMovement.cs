@@ -21,6 +21,16 @@ namespace Game.Movement
             particleCircleCollider = GetComponent<CircleCollider2D>();
         }
 
+        private void OnEnable()
+        {
+            EventHandler.BubbleStateEvent += IsBubbleForm;
+        }
+
+        private void OnDisable()
+        {
+            EventHandler.BubbleStateEvent -= IsBubbleForm;
+        }
+
         private void Start()
         {
             movementSpeed = playerMovement.GetSolidMovementSpeed();
@@ -43,6 +53,18 @@ namespace Game.Movement
                 lookDirection.Normalize();
             }
 
+        }
+
+        private void IsBubbleForm(bool isBubbleState)
+        {
+            if(isBubbleState)
+            {
+                particleRigidbody.gravityScale = 0f;
+            }
+            else
+            {
+                particleRigidbody.gravityScale = 5f;
+            }
         }
     }
 }

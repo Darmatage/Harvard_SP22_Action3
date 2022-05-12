@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 872934328378096535}
   - component: {fileID: 872934328378096532}
   - component: {fileID: 7110272216838514997}
+  - component: {fileID: 2100708631084185641}
   m_Layer: 0
   m_Name: AdditionalParticle
   m_TagString: Untagged
@@ -214,3 +215,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d862610ba6944e2b81b10fd16d9b73f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!247 &2100708631084185641
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872934328378096513}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
