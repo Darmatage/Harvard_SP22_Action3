@@ -124,4 +124,14 @@ public class EventHandler
             BubbleStateEvent(isBubbleState);
         }
     }
+
+    // Load Next Scene Event
+    public static event Action LoadNextSceneEvent;
+    public static void CallLoadNextSceneEvent()
+    {
+        if (LoadNextSceneEvent != null)
+        {
+            LoadNextSceneEvent();
+        }
+    }
 }
