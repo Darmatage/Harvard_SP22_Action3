@@ -110,7 +110,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
 
         if (temperatureManager.isHeatingUp) {
             heatingTimer += 1;
-            if (temperatureManager.Heat < 100 && heatingTimer % 12 == 0) {
+            if (temperatureManager.Heat < 100 && heatingTimer % 6 == 0) {
                 temperatureManager.adjustHeat(heatRate);
                 heatingTimer = 0;
             }
