@@ -31,6 +31,7 @@ public class BlowpipeController : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
         if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
+            player.GetComponent<PlayerMarbleScaleController>().setIsGrowing(false);
             player.GetComponent<PlayerMarbleScaleController>().particleTriggerCount--;
         }
     }

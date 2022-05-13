@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class TemperatureManager : MonoBehaviour
 {
     public const int MARBLE_MIN_HEAT = 0;
-    public const int MARBLE_MAX_HEAT = 30;
-    public const int MALLEABLE_STATE_MIN_HEAT = 31;
+    public const int MARBLE_MAX_HEAT = 50;
+    public const int MALLEABLE_STATE_MIN_HEAT = 51;
     public const int MALLEABLE_STATE_MAX_HEAT = 100;
 
     // playerHeat

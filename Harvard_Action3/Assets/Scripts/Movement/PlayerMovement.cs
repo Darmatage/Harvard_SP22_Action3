@@ -59,10 +59,11 @@ namespace Game.Movement
         private void FixedUpdate()
         {
             if (playerStateController.state == PlayerStateController.MARBLE || playerStateController.state == PlayerStateController.BUBBLE) {
+                GameObject marble = GameObject.FindWithTag("MarbleSprite");
                 if (moveInput.x == 1) {
-                    player.transform.Rotate(0f, 0f, -10f, Space.Self);
+                    marble.transform.Rotate(0f, 0f, -10f, Space.Self);
                 } else if (moveInput.x == -1) {
-                    player.transform.Rotate(0f, 0f, 10f, Space.Self);
+                    marble.transform.Rotate(0f, 0f, 10f, Space.Self);
                 }
             }
         }

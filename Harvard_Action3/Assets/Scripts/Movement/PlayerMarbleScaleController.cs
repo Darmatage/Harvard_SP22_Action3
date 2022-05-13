@@ -110,14 +110,14 @@ public class PlayerMarbleScaleController : MonoBehaviour
 
         if (temperatureManager.isHeatingUp) {
             heatingTimer += 1;
-            if (temperatureManager.Heat < 100 && heatingTimer % 3 == 0) {
+            if (temperatureManager.Heat < 100 && heatingTimer % 6 == 0) {
                 temperatureManager.adjustHeat(heatRate);
                 heatingTimer = 0;
             }
         } else {
             coolingTimer += 1;
 
-            if (temperatureManager.Heat > 0 && coolingTimer % 25 == 0) {
+            if (temperatureManager.Heat > 0 && coolingTimer % 50 == 0) {
                 temperatureManager.adjustHeat(-heatRate);
                 coolingTimer = 0;
             }
@@ -145,6 +145,10 @@ public class PlayerMarbleScaleController : MonoBehaviour
         isLighterThanAir = true;
         playerStateController.bubbleStartHeat = temperatureManager.Heat;
         particleTriggerCount = 0;
+    }
+
+    public void setIsGrowing(bool isGrowing) {
+        this.isGrowing = isGrowing;
     }
 
     public void setNotBubble() {
