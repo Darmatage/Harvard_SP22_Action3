@@ -12,9 +12,7 @@ public class WaterColliderController : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
         if (other.tag == "Player" || other.tag == "SolidContainer" || parentTag == "ParticleContainer") {
-			if (player.GetComponent<PlayerStateController>().state == PlayerStateController.MALLEABLE) {
-				EventHandler.CallPlayerDeathEvent();
-			}
+			player.GetComponent<TemperatureManager>().Heat -= 10;
 		}
 	}
 }
