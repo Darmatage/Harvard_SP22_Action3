@@ -38,7 +38,14 @@ namespace Game.UI
         public void ExitGameButtonUI()
         {
             SceneManager.LoadScene("Scene_0_MainMenu");
+        } 
+        
+        public void LoadLevel(string levelToLoad)
+        {
+            SceneManager.LoadScene(levelToLoad);
         }
+
+
 
 
         public void QuitGame()

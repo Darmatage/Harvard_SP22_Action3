@@ -34,8 +34,8 @@ namespace Game.Control
         {
             isPlayerDead = true;
             solidContainer.SetActive(false);
-            particleContainer.SetActive(true);
-            StartCoroutine(BreakPause());
+            particleContainer.SetActive(false);
+            //StartCoroutine(BreakPause());
             StartCoroutine(RestartLevel());
         }
         IEnumerator BreakPause()
