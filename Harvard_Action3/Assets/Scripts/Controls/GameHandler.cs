@@ -3,15 +3,23 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System;
 
 public class GameHandler : MonoBehaviour {
 
       private GameObject player;
       private TemperatureManager temperatureManager;
-      public static int playerHeat = 100;
-      public int StartPlayerHeat = 100;
+      public static float playerHeat = 100f;
+      public float StartPlayerHeat = 100f;
       public GameObject textHeat;
-      public GameObject heatBar;
+      //public GameObject heatBar;
+
+      [SerializeField] Image heatBarUIMask;
+      private float originalBarSize;
+
+      [SerializeField] TextMeshProUGUI fritsTextField;
+
       public static int gotTokens = 0;
       public GameObject tokensText;
 
@@ -38,9 +46,16 @@ public class GameHandler : MonoBehaviour {
                   gotTokens = 0;
             }
 
+            originalBarSize = heatBarUIMask.rectTransform.rect.width;
+
             updateStatsDisplay();
 
 
+      }
+
+      private void Update() 
+      {
+            RefreshHeatUI(temperatureManager.GetPercentage()/100);
       }
 
       public void playerGetTokens(int newTokens){
@@ -70,14 +85,16 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void updateStatsDisplay(){
-            Text textHeatTemp = textHeat.GetComponent<Text>();
-            textHeatTemp.text = "HEAT: " + temperatureManager.Heat; //.ToString();
+            // Text textHeatTemp = textHeat.GetComponent<Text>();
+            // textHeatTemp.text = "HEAT: " + temperatureManager.Heat; //.ToString();
 
-            Text tokensTextTemp = tokensText.GetComponent<Text>();
-            tokensTextTemp.text = "FRIT: " + gotTokens;
+            // Text tokensTextTemp = tokensText.GetComponent<Text>();
+            // tokensTextTemp.text = "FRIT: " + gotTokens;
 
-            Image heatBarTemp = heatBar.GetComponent<Image>();
-            heatBarTemp.fillAmount = temperatureManager.Heat/100;
+            fritsTextField.text = String.Format("{0}", gotTokens);
+
+            //Image heatBarTemp = heatBar.GetComponent<Image>();
+            //heatBarTemp.fillAmount = temperatureManager.Heat/100;
             // Debug.Log("heat level is " + temperatureManager.Heat);
       }
 
@@ -91,11 +108,6 @@ public class GameHandler : MonoBehaviour {
             yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene("EndLose");
       }
-
-      // public void StartGame() {
-      //       Debug.Log("Start Game?");
-      //       SceneManager.LoadScene("Scene_1_Level1");
-      // }
 
       public void RestartGame() {
             SceneManager.LoadScene("Scene_1_Level1");
@@ -115,7 +127,8 @@ public class GameHandler : MonoBehaviour {
             return gotTokens;
       }
 
-      // public void Credits() {
-      //       SceneManager.LoadScene("Credits");
-      // }
+      public void RefreshHeatUI(float value)
+      {				
+            heatBarUIMask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalBarSize * value);
+      }
 }
