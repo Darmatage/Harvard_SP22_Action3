@@ -9,7 +9,9 @@ public class LoadScene1 : MonoBehaviour {
        public int primeInt = 1;         // This integer drives game progress!
        public Text IntroText;
        public Text GoalText;
-       public GameObject TextDisplay;
+       public GameObject introTextDisplay;
+       public GameObject goalTextDisplay;
+       public Text levelTitle;
        public GameObject ArtBG1;
        public GameObject skipIntroButton;
        public GameObject NextScene1Button;
@@ -19,7 +21,8 @@ public class LoadScene1 : MonoBehaviour {
        private bool allowSpace = true;
 
 void Start(){         // initial visibility settings
-       TextDisplay.SetActive(false);
+       introTextDisplay.SetActive(false);
+       goalTextDisplay.SetActive(false);
        ArtBG1.SetActive(true);
        skipIntroButton.SetActive(true);
        NextScene1Button.SetActive(false);
@@ -44,46 +47,52 @@ public void talking(){         // main story function. Players hit next to progr
        }
        else if (primeInt == 2){
          Debug.Log("Prime Int = 2");
-               TextDisplay.SetActive(true);
+               introTextDisplay.SetActive(true);
+               goalTextDisplay.SetActive(false);
                IntroText.text = "The Glass Dragon is the spirit of the studio. A being of light, heat, and color, it resides in the furnace, just beyond the reach of man. ";
                GoalText.text = "";
        }
       else if (primeInt == 3){
         Debug.Log("PrimeInt = 3");
                 IntroText.text = "All glass desires to join the Dragon, but much of it is destined instead to become Art. ";
+                levelTitle.text = "";
                 GoalText.text = "";
        }
       else if (primeInt == 4){
-                IntroText.text = "All glass desires to join the Dragon, but much of it is destined instead to become Art. ";
+                IntroText.text = "It is the lost, discarded, broken glass - sacrificed to Art - that join the Dragon. ";
+                levelTitle.text = "";
                 GoalText.text = "";
        }
       else if (primeInt == 5){
-                IntroText.text = "It is the lost, discarded, broken glass - sacrificed to Art - that join the Dragon. ";
+                IntroText.text = "You are one such piece - a simple marble, a beginner’s practice. ";
+                levelTitle.text = "";
                 GoalText.text = "";
        }
       else if (primeInt == 6){
-                IntroText.text = "You are one such piece - a simple marble, a beginner’s practice. ";
-                GoalText.text = "";
-       }
-      else if (primeInt == 7){
                 IntroText.text = "Learn what it means to be glass, explore the studio, and pick up beautiful offerings of color on your way to reach the Dragon! ";
+                levelTitle.text = "";
                 GoalText.text = "";
       }
-      else if (primeInt == 8){
+      else if (primeInt == 7){
                 skipIntroButton.SetActive(false);
                 NextScene1Button.SetActive(true);
+                introTextDisplay.SetActive(false);
+                goalTextDisplay.SetActive(true);
                 nextButton.SetActive(false);
                 IntroText.text = "";
-                GoalText.text = "Level 1: Hot, glass melts, drips, becomes malleable. When it cools it hardens into a marble, which rolls and jumps. But if hot glass gets too cold, it shatters! ";
+                levelTitle.text = "Level 1:";
+                GoalText.text = " • When hot, glass melts, drips, becomes malleable. \n" + " • When it cools it hardens into a marble, which rolls and jumps. \n" + " • But if hot glass gets too cold, it shatters! \n";
       }
 
 }
     public void SkipIntroFunct(){
-        TextDisplay.SetActive(true);
+        introTextDisplay.SetActive(false);
+        goalTextDisplay.SetActive(true);
         skipIntroButton.SetActive(false);
         NextScene1Button.SetActive(true);
         nextButton.SetActive(false);
         IntroText.text = "";
+        levelTitle.text = "Level 1:";
         GoalText.text = "Level 1: Hot, glass melts, drips, becomes malleable. When it cools it hardens into a marble, which rolls and jumps. But if hot glass gets too cold, it shatters! ";
       }
     public void SceneChange1(){

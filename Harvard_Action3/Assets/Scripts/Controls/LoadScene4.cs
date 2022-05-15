@@ -8,6 +8,7 @@ using UnityEngine.Audio;
 public class LoadScene4 : MonoBehaviour {
        public int primeInt = 1;         // This integer drives game progress!
        public Text IntroText;
+       public Text levelTitle;
 //       public Text GoalText;
        public GameObject TextDisplay;
        public GameObject ArtBG1;
@@ -22,7 +23,8 @@ void Start(){         // initial visibility settings
        TextDisplay.SetActive(false);
        ArtBG1.SetActive(true);
        TextDisplay.SetActive(true);
-       IntroText.text = "Prove your understanding and claim your place as part of the Great Glass Dragon! ";
+       levelTitle.text = "Level 4:";
+       IntroText.text = "Prove your understanding of your forms and abilities to claim your place as part of the Great Glass Dragon! ";
 //       skipIntroButton.SetActive(true);
        NextScene1Button.SetActive(true);
 //       nextButton.SetActive(true);

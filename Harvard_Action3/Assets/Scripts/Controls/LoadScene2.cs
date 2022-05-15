@@ -8,6 +8,7 @@ using UnityEngine.Audio;
 public class LoadScene2 : MonoBehaviour {
        public int primeInt = 1;         // This integer drives game progress!
        public Text IntroText;
+       public Text levelTitle;
 //       public Text GoalText;
        public GameObject TextDisplay;
        public GameObject ArtBG1;
@@ -22,7 +23,8 @@ void Start(){         // initial visibility settings
        TextDisplay.SetActive(false);
        ArtBG1.SetActive(true);
        TextDisplay.SetActive(true);
-       IntroText.text = "Cool glass can be gathered upon, building mass to allow for larger projects. Hot glass can be cut like taffy. ";
+       levelTitle.text = "Level 2:";
+       IntroText.text = " • Cool glass can be gathered upon. Heat up in the crucible to gather molten glass and double your mass. \n \n" + " • Hot glass can be cut like taffy. But watch your temperature - the diamond shears could be friend or foe!";
 //       skipIntroButton.SetActive(true);
        NextScene1Button.SetActive(true);
 //       nextButton.SetActive(true);

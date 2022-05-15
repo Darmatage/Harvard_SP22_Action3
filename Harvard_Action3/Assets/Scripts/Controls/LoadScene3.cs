@@ -8,6 +8,7 @@ using UnityEngine.Audio;
 public class LoadScene3 : MonoBehaviour {
        public int primeInt = 1;         // This integer drives game progress!
        public Text IntroText;
+       public Text levelTitle;
 //       public Text GoalText;
        public GameObject TextDisplay;
        public GameObject ArtBG1;
@@ -19,10 +20,11 @@ public class LoadScene3 : MonoBehaviour {
        private bool allowSpace = true;
 
 void Start(){         // initial visibility settings
-       TextDisplay.SetActive(false);
+       // TextDisplay.SetActive(false);
        ArtBG1.SetActive(true);
        TextDisplay.SetActive(true);
-       IntroText.text = "Hot glass can be blown into a bubble - but a bubble is fragile and shatters easily! ";
+       levelTitle.text = "Level 3:";
+       IntroText.text = " • Hot glass can be blown into a bubble, floating, lighter than air. \n \n" + " • You can soar to great heights, but a bubble is fragile and shatters easily! ";
 //       skipIntroButton.SetActive(true);
        NextScene1Button.SetActive(true);
 //       nextButton.SetActive(true);
