@@ -50,7 +50,6 @@ public void talking(){         // main story function. Players hit next to progr
                introTextDisplay.SetActive(true);
                goalTextDisplay.SetActive(false);
                IntroText.text = "The Glass Dragon is the spirit of the studio. A being of light, heat, and color, it resides in the furnace, just beyond the reach of man. ";
-               levelTitle.text = "";
                GoalText.text = "";
        }
       else if (primeInt == 3){
