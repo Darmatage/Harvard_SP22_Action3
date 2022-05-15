@@ -81,7 +81,7 @@ public void talking(){         // main story function. Players hit next to progr
                 nextButton.SetActive(false);
                 IntroText.text = "";
                 levelTitle.text = "Level 1:";
-                GoalText.text = " • Glass melts, drips, and becomes malleable with a Heat level of 50 or above. \n" + " • When it cools below 50, it hardens into a marble, which rolls and jumps. \n" + " • But if hot glass gets too cold, it shatters! \n";
+                GoalText.text = " • Glass melts, drips, and becomes malleable with a Heat level of 50 or above. \n" + " • When it cools below 50, it hardens into a marble, which rolls and jumps. \n" + " • But if hot glass gets too cold, it shatters! \n" + " • Pick up the colorful pieces of Frit along your journey as an offering to the Glass Dragon. \n";
       }
 
 }
