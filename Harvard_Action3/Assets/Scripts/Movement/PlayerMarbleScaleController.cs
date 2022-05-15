@@ -16,6 +16,8 @@ public class PlayerMarbleScaleController : MonoBehaviour
     private Vector3 scaleChange;
     private Vector2 upForce;
 
+    public float floatDuration = 3f;
+
     float minSize = 1f;
     float maxSize = 3f;
     float scale = 1f;
@@ -94,13 +96,13 @@ public class PlayerMarbleScaleController : MonoBehaviour
    
                     rigidBody.gravityScale = -1;
                     EventHandler.CallBubbleStateEvent(true);
-                    if (floatingTimer % 150 == 0) {
+                    if (floatingTimer % (floatDuration * 50) == 0) {
                         isFloating = false;
                         floatingTimer = 0;
                         
                     }
                 } else {
-                    rigidBody.gravityScale = 1;
+                    rigidBody.gravityScale = 0;
                     EventHandler.CallBubbleStateEvent(false);
                 }
                 break;
@@ -145,10 +147,12 @@ public class PlayerMarbleScaleController : MonoBehaviour
 
     // @TODO manage the various player states via a proper state machine
     public void setBubble() {
-        isGrowing = true;
-        isLighterThanAir = true;
-        playerStateController.bubbleStartHeat = temperatureManager.Heat;
-        particleTriggerCount = 0;
+        if (playerStateController.state != PlayerStateController.MARBLE) {
+            isGrowing = true;
+            isLighterThanAir = true;
+            playerStateController.bubbleStartHeat = temperatureManager.Heat;
+            particleTriggerCount = 0;
+        }
     }
 
     public void setIsGrowing(bool isGrowing) {
@@ -156,11 +160,13 @@ public class PlayerMarbleScaleController : MonoBehaviour
     }
 
     public void setNotBubble() {
-        isGrowing = false;
-        isFloating = false;
-        isLighterThanAir = false;
-        playerStateController.setState(PlayerStateController.MALLEABLE);
-        EventHandler.CallStateChangeActionEvent();
+        if (playerStateController.state == PlayerStateController.BUBBLE) {
+            isGrowing = false;
+            isFloating = false;
+            isLighterThanAir = false;
+            playerStateController.setState(PlayerStateController.MALLEABLE);
+            EventHandler.CallStateChangeActionEvent();
+        }
     }
 
     public void setGrowSolid(bool growSolid) {

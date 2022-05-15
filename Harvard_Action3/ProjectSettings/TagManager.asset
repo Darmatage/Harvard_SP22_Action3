@@ -17,6 +17,7 @@ TagManager:
   - LevelMusic
   - PlayerCamera
   - MarbleSprite
+  - MarbleSpecular
   layers:
   - Default
   - TransparentFX
