@@ -11,7 +11,7 @@ public class GameHandler : MonoBehaviour {
       public static int playerHeat = 100;
       public int StartPlayerHeat = 100;
       public GameObject textHeat;
-
+      public GameObject heatBar;
       public static int gotTokens = 0;
       public GameObject tokensText;
 
@@ -71,10 +71,14 @@ public class GameHandler : MonoBehaviour {
 
       public void updateStatsDisplay(){
             Text textHeatTemp = textHeat.GetComponent<Text>();
-            textHeatTemp.text = temperatureManager.Heat.ToString();
+            textHeatTemp.text = "HEAT: " + temperatureManager.Heat; //.ToString();
 
             Text tokensTextTemp = tokensText.GetComponent<Text>();
             tokensTextTemp.text = "FRIT: " + gotTokens;
+
+            Image heatBarTemp = heatBar.GetComponent<Image>();
+            heatBarTemp.fillAmount = temperatureManager.Heat/100;
+            // Debug.Log("heat level is " + temperatureManager.Heat);
       }
 
       public void playerDies(){
