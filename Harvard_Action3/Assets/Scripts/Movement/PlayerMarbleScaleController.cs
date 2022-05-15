@@ -121,9 +121,13 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 temperatureManager.adjustHeat(-heatRate);
                 coolingTimer = 0;
             }
+
+            if (temperatureManager.Heat < 0) {
+                temperatureManager.Heat = 0;
+            }
         }
 
-        if (temperatureManager.Heat == 0) 
+        if (temperatureManager.Heat <= 0) 
         {
             if(!isPlayerDead)
             {
