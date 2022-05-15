@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class PlayerStateController : MonoBehaviour
 {
-    public const int MARBLE = 0;
-    public const int MALLEABLE = 1;
-    public const int BUBBLE = 2;
-    public const int BUBBLE_FLOATING = 3;
-    public const int BUBBLE_FLOATING_TEMP_RANGE = 10;
+    public const float MARBLE = 0f;
+    public const float MALLEABLE = 1f;
+    public const float BUBBLE = 2f;
+    public const float BUBBLE_FLOATING = 3f;
+    public const float BUBBLE_FLOATING_TEMP_RANGE = 10f;
 
-    public int bubbleStartHeat;
+    public float bubbleStartHeat;
 
-    public int state;
+    public float state;
 
     void Start() {
         state = MARBLE;
     }
 
-    public void setState(int newState) {
+    public void setState(float newState) {
         state = newState;
     }
 }
