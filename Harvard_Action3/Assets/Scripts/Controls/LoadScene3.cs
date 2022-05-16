@@ -24,7 +24,7 @@ void Start(){         // initial visibility settings
        ArtBG1.SetActive(true);
        TextDisplay.SetActive(true);
        levelTitle.text = "Level 3:";
-       IntroText.text = " • Hot glass can be blown into a bubble, floating, lighter than air. \n \n" + " • You can soar to great heights, but a bubble is fragile and shatters easily! ";
+       IntroText.text = " • Hot glass can be blown into a bubble, floating, lighter than air. \n \n" + " • Roll over a Blow Pipe and can soar to great heights, but be carefule - a bubble is fragile and shatters easily! ";
 //       skipIntroButton.SetActive(true);
        NextScene1Button.SetActive(true);
 //       nextButton.SetActive(true);

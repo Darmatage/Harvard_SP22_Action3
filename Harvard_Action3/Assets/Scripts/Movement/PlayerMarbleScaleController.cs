@@ -90,7 +90,7 @@ public class PlayerMarbleScaleController : MonoBehaviour
                 if (isFloating) {
                     temperatureManager.isHeatingUp = false;
                     floatingTimer++;
-                    int deltaT = playerStateController.bubbleStartHeat - temperatureManager.Heat;
+                    float deltaT = playerStateController.bubbleStartHeat - temperatureManager.Heat;
    
                     rigidBody.gravityScale = -1;
                     EventHandler.CallBubbleStateEvent(true);
@@ -171,8 +171,8 @@ public class PlayerMarbleScaleController : MonoBehaviour
         temperatureManager.isHeatingUp = heating;
     }
 
-    public int getHeatLevel() {
-        return temperatureManager.Heat;
+    public float getHeatLevel() {
+        return temperatureManager.GetHeatLevel();
     }
 
 }

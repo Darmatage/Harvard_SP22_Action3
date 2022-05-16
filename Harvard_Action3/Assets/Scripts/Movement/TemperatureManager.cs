@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class TemperatureManager : MonoBehaviour
 {
-    public const int MARBLE_MIN_HEAT = 0;
-    public const int MARBLE_MAX_HEAT = 50;
-    public const int MALLEABLE_STATE_MIN_HEAT = 51;
-    public const int MALLEABLE_STATE_MAX_HEAT = 100;
+    public const float MARBLE_MIN_HEAT = 0f;
+    public const float MARBLE_MAX_HEAT = 50f;
+    public const float MALLEABLE_STATE_MIN_HEAT = 51f;
+    public const float MALLEABLE_STATE_MAX_HEAT = 100f;
 
     // playerHeat
-    public int startHeat = 30;
-    public int Heat = 30;
+    public float startHeat = 30f;
+    public float Heat = 30f;
 
     public bool isHeatingUp;
 
@@ -25,7 +25,7 @@ public class TemperatureManager : MonoBehaviour
     //temporary time variables:
     public float timeToDamage = 5f;
     private float theTimer;
-    public int damageAmt = 10;
+    public float damageAmt = 10f;
 
     private void Start()
     {
@@ -42,5 +42,20 @@ public class TemperatureManager : MonoBehaviour
 		Heat = 0;
         Debug.Log("You Died");
 
+    }
+
+    public float GetHeatLevel()
+    {
+        return Heat;
+    }
+
+    public float GetPercentage()
+    {
+        return 100 * GetFraction();
+    }
+
+    public float GetFraction()
+    {
+        return Heat / MALLEABLE_STATE_MAX_HEAT;
     }
 }

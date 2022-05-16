@@ -16,6 +16,9 @@ public class LoadScene1 : MonoBehaviour {
        public GameObject skipIntroButton;
        public GameObject NextScene1Button;
        public GameObject nextButton;
+       // public Image frit;
+       // public Image tempHot;
+       // public Image tempCold;
       //public GameHandler gameHandler;
       //public AudioSource audioSource;
        private bool allowSpace = true;
@@ -74,6 +77,7 @@ public void talking(){         // main story function. Players hit next to progr
                 GoalText.text = "";
       }
       else if (primeInt == 7){
+
                 skipIntroButton.SetActive(false);
                 NextScene1Button.SetActive(true);
                 introTextDisplay.SetActive(false);
@@ -81,7 +85,7 @@ public void talking(){         // main story function. Players hit next to progr
                 nextButton.SetActive(false);
                 IntroText.text = "";
                 levelTitle.text = "Level 1:";
-                GoalText.text = " • When hot, glass melts, drips, becomes malleable. \n" + " • When it cools it hardens into a marble, which rolls and jumps. \n" + " • But if hot glass gets too cold, it shatters! \n";
+                GoalText.text = " • Glass melts, drips, and becomes malleable when hot. Pass through a Ring of Heat to warm up, and monitor your heat level in the upper right corner. \n\n" + " • When glass cools, it hardens into a marble, which rolls and jumps. \n\n" + " • But if hot glass gets too cold, it shatters! \n\n" + " • Pick up the colorful pieces of Frit along your journey as an offering to the Glass Dragon.";
       }
 
 }
@@ -93,7 +97,7 @@ public void talking(){         // main story function. Players hit next to progr
         nextButton.SetActive(false);
         IntroText.text = "";
         levelTitle.text = "Level 1:";
-        GoalText.text = "Level 1: Hot, glass melts, drips, becomes malleable. When it cools it hardens into a marble, which rolls and jumps. But if hot glass gets too cold, it shatters! ";
+        GoalText.text = " • Glass melts, drips, and becomes malleable when hot. Pass through a Ring of Heat to warm up, and monitor your heat level in the upper right corner. \n\n" + " • When glass cools, it hardens into a marble, which rolls and jumps. \n\n" + " • But if hot glass gets too cold, it shatters! \n\n" + " • Pick up the colorful pieces of Frit along your journey as an offering to the Glass Dragon.";
       }
     public void SceneChange1(){
        SceneManager.LoadScene("Scene_1_Level1");
