@@ -16,6 +16,8 @@ TagManager:
   - VolumePersists
   - LevelMusic
   - PlayerCamera
+  - MarbleSprite
+  - MarbleSpecular
   layers:
   - Default
   - TransparentFX

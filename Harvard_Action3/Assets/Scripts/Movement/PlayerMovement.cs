@@ -60,11 +60,13 @@ namespace Game.Movement
         {
             if (playerStateController.state == PlayerStateController.MARBLE || playerStateController.state == PlayerStateController.BUBBLE) {
                 GameObject marble = GameObject.FindWithTag("MarbleSprite");
+                GameObject marbleSpecular = GameObject.FindWithTag("MarbleSpecular");
                 if (moveInput.x == 1) {
                     marble.transform.Rotate(0f, 0f, -10f, Space.Self);
                 } else if (moveInput.x == -1) {
                     marble.transform.Rotate(0f, 0f, 10f, Space.Self);
                 }
+                marbleSpecular.transform.Rotate(0f, 0f, -0f, Space.Self);
             }
         }
 
